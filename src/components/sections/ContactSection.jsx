@@ -2,6 +2,8 @@ import { ArrowRight, Mail, MapPin } from 'lucide-react';
 import ButtonLink from '../layout/ButtonLink';
 
 export default function ContactSection({ person, socials }) {
+  const emailLabel = person.email.replace('mailto:', '');
+
   return (
     <section id="contact" className="section-frame section-light">
       <div className="mx-auto max-w-[88rem] px-4 py-16 md:px-8 lg:py-20">
@@ -17,7 +19,7 @@ export default function ContactSection({ person, socials }) {
           <div className="contact-meta">
             <a href={person.email} className="contact-row">
               <Mail size={15} />
-              <span>hello.visualpharmacy@gmail.com</span>
+              <span>{emailLabel}</span>
             </a>
             <div className="contact-row">
               <MapPin size={15} />

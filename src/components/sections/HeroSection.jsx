@@ -1,6 +1,3 @@
-import { ArrowRight } from 'lucide-react';
-import ButtonLink from '../layout/ButtonLink';
-
 export default function HeroSection({ person }) {
   return (
     <section className="section-frame border-b border-[var(--border-soft)] hero-surface">
@@ -16,18 +13,17 @@ export default function HeroSection({ person }) {
           </div>
 
           <div className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
-            <ButtonLink href={person.primaryCta.href}>
+            <a href={person.primaryCta.href} className="cta-primary">
               {person.primaryCta.label}
-              <ArrowRight size={14} className="ml-2" />
-            </ButtonLink>
-            <ButtonLink href={person.secondaryCta.href} variant="secondary">
+            </a>
+            <a href={person.secondaryCta.href} className="cta-secondary">
               {person.secondaryCta.label}
-            </ButtonLink>
+            </a>
           </div>
         </div>
 
         <div className="justify-self-start lg:justify-self-end">
-          <div className="portrait-frame">
+          <div className="portrait-frame group">
             <div className="portrait-grid" />
             <img
               src={person.portrait.src}

@@ -17,9 +17,9 @@ export default function SkillsSection({ groups }) {
           return (
             <article
               key={group.title}
-              className={`service-panel ${index < groups.length - 1 ? 'md:border-r' : ''} border-[var(--border-soft)]`}
+              className={`service-panel ${index < groups.length - 1 ? 'md:border-r' : ''} border-[var(--border-soft)] group`}
             >
-              <Icon size={22} className="text-[var(--text-muted)]" />
+              <Icon size={22} className="service-icon" />
               <p className="service-kicker">{labels[index]}</p>
               <h3 className="service-title">{group.title === 'Brand Systems' ? 'Brand Identity' : group.title === 'Content Production' ? 'Web Design' : 'Video Editor'}</h3>
               <p className="service-text">{group.description}</p>

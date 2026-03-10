@@ -9,9 +9,9 @@ export const personalInfo = {
   name: 'Tanzel Ur Rehman',
   shortName: 'Tanzel',
   title: 'Chief Designer & Multimedia Executive',
-  location: 'Malaysia',
+  location: 'Selangor, Malaysia',
   availability: 'Open to design and multimedia roles',
-  email: 'mailto:hello.visualpharmacy@gmail.com',
+  email: 'mailto:rehmantanzel@gmail.com',
   introLabel: 'Diagnosing digital friction.',
   heroLead: 'PRESCRIBE THE',
   heroAccent: 'Visual Cure.',
@@ -114,36 +114,73 @@ export const photoItems = [
     title: 'Automotive Detail Study',
     src: '/photo1.webp',
     alt: 'Automotive photography detail study',
+    goals:
+      'Capture premium surface texture and craftsmanship details that strengthen brand trust in service quality.',
+    challenges:
+      'Mixed lighting in workshop conditions and visual clutter from tools and background movement.',
+    results:
+      'Delivered a cleaner hero visual set used across social posts and campaign thumbnails with stronger engagement.',
   },
   {
     title: 'Workshop Atmosphere',
     src: '/photo2.webp',
     alt: 'Automotive workshop atmosphere photography',
+    goals:
+      'Show the environment as organized, credible, and active while still feeling human and approachable.',
+    challenges:
+      'Needed to balance documentary realism with polished brand aesthetics in a noisy production space.',
+    results:
+      'Created a reusable media bank for promotions, story highlights, and brand profile visual consistency.',
   },
   {
     title: 'Portrait Direction',
     src: '/profile.webp',
     alt: 'Portrait composition and lighting direction',
+    goals:
+      'Present leadership presence in a way that feels grounded, confident, and aligned with the visual identity.',
+    challenges:
+      'Limited setup time required precise framing and post-processing choices to avoid over-stylization.',
+    results:
+      'Established a signature portrait treatment now used across the portfolio hero and key profile placements.',
   },
   {
     title: 'Automotive Detail Study 2',
     src: '/photo1.webp',
     alt: 'Automotive photography detail study',
+    goals:
+      'Extend detail-based storytelling for car service campaigns focused on quality assurance.',
+    challenges:
+      'Needed consistency with previous shoots while introducing fresh framing and composition variety.',
+    results:
+      'Expanded the case-study library with adaptable visuals for reels, static posts, and print snippets.',
   },
   {
     title: 'Workshop Atmosphere 2',
     src: '/photo2.webp',
     alt: 'Automotive workshop atmosphere photography',
+    goals:
+      'Document team workflow and environment cues that communicate scale and operational reliability.',
+    challenges:
+      'Maintaining image clarity and narrative focus under fast-moving working conditions.',
+    results:
+      'Produced strong mid-funnel visual assets used in audience trust-building and service messaging.',
   },
   {
     title: 'Portrait Direction 2',
     src: '/profile.webp',
     alt: 'Portrait composition and lighting direction',
+    goals:
+      'Create alternate portrait options for multi-platform profile usage while keeping identity coherence.',
+    challenges:
+      'Ensure variation without drifting from the visual language established in the hero presentation.',
+    results:
+      'Added versatile, high-clarity portrait options for recruitment, client decks, and brand intros.',
   },
 ];
 
 export const socialLinks = [
-  { label: 'Email', href: 'mailto:hello.visualpharmacy@gmail.com' },
+  { label: 'Email', href: 'mailto:rehmantanzel@gmail.com' },
   { label: 'Selected Work', href: '#work' },
   { label: 'Background', href: '#about' },
 ];
+

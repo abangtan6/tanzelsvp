@@ -1,14 +1,39 @@
-export default function Footer({ person }) {
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+
+export default function Footer({ person, links }) {
   return (
-    <footer className="border-t border-black/10 bg-[#050505] text-[#efe8de]">
-      <div className="mx-auto flex max-w-[88rem] flex-col gap-8 px-4 py-10 md:flex-row md:items-center md:justify-between md:px-8">
-        <div className="flex items-center gap-3 text-[11px] tracking-[0.08em]">
-          <span className="text-accent">+</span>
-          <span>{person.name}&apos;s Visual Pharmacy</span>
+    <footer className="site-footer-shell">
+      <div className="site-footer-card">
+        <div className="site-footer-brand">
+          <span className="site-footer-logo">+</span>
+          <span>{person.shortName}&apos;s Visual Pharmacy</span>
         </div>
-        <div className="inline-flex items-center gap-3 border border-white/10 bg-white/5 px-4 py-2 font-mono text-[9px] uppercase tracking-[0.28em] text-white/70">
-          <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          Clinic Operational
+
+        <nav className="site-footer-nav" aria-label="Footer">
+          {links.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="site-footer-meta">
+          <p>© 2026 Visual Pharmacy</p>
+          <div className="site-footer-socials" aria-label="Social links">
+            <a href="#" aria-label="Twitter">
+              <Twitter size={16} />
+            </a>
+            <a href="#" aria-label="Instagram">
+              <Instagram size={16} />
+            </a>
+            <a href="#" aria-label="Facebook">
+              <Facebook size={16} />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <Linkedin size={16} />
+            </a>
+          </div>
+          <p>Designed by {person.shortName}</p>
         </div>
       </div>
     </footer>

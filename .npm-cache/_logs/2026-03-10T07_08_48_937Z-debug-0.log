@@ -1,0 +1,18 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.11.0
+2 info using node@v25.8.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Kry\Downloads\New folder (5)\Untitled folder\WEBSITE\.npmrc
+5 silly config load:file:C:\Users\Kry\.npmrc
+6 silly config load:file:C:\Users\Kry\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm run build
+8 verbose argv "run" "build"
+9 verbose logfile logs-max:10 dir:C:\Users\Kry\Downloads\New folder (5)\Untitled folder\WEBSITE\.npm-cache\_logs\2026-03-10T07_08_48_937Z-
+10 verbose logfile C:\Users\Kry\Downloads\New folder (5)\Untitled folder\WEBSITE\.npm-cache\_logs\2026-03-10T07_08_48_937Z-debug-0.log
+11 silly logfile done cleaning log files
+12 verbose cwd C:\Users\Kry\Downloads\New folder (5)\Untitled folder\WEBSITE
+13 verbose os Windows_NT 10.0.19045
+14 verbose node v25.8.0
+15 verbose npm  v11.11.0
+16 verbose exit 0
+17 info ok

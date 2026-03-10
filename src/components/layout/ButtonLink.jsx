@@ -1,6 +1,6 @@
 export default function ButtonLink({ href, children, variant = 'primary', className = '' }) {
   const baseClassName =
-    'inline-flex items-center justify-center border px-5 py-3 text-[11px] font-bold uppercase tracking-[0.2em] transition duration-200 hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
+    'inline-flex items-center justify-center border px-5 py-3 text-[12px] font-bold uppercase tracking-[0.16em] transition duration-200 hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
 
   const variantClassName =
     variant === 'secondary'

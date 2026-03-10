@@ -32,7 +32,7 @@ export default function App() {
         <PhotographySection photos={photoItems} />
         <ContactSection person={personalInfo} socials={socialLinks} />
       </main>
-      <Footer person={personalInfo} />
+      <Footer person={personalInfo} links={navLinks} />
     </div>
   );
 }
