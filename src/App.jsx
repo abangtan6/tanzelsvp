@@ -1,18 +1,24 @@
 import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
+import SiteFooter from './components/layout/SiteFooter';
 import AboutSection from './components/sections/AboutSection';
 import ContactSection from './components/sections/ContactSection';
 import HeroSection from './components/sections/HeroSection';
+import BrandsSection from './components/sections/BrandsSection';
 import PhotographySection from './components/sections/PhotographySection';
 import SkillsSection from './components/sections/SkillsSection';
 import WorkSection from './components/sections/WorkSection';
+import CareerJourneySection from './components/sections/CareerJourneySection';
+import WebAppsSection from './components/sections/WebAppsSection';
 import {
   navLinks,
   personalInfo,
   aboutStats,
   experienceItems,
+  careerJourney,
   skillGroups,
+  brandItems,
   projectItems,
+  webAppItems,
   photoItems,
   socialLinks,
 } from './data/portfolio';
@@ -23,16 +29,22 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Navbar links={navLinks} theme={theme} onToggleTheme={toggleTheme} />
-      <main id="top">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <Navbar links={navLinks} theme={theme} onToggleTheme={toggleTheme} person={personalInfo} />
+      <main id="main-content">
         <HeroSection person={personalInfo} />
+        <CareerJourneySection journey={careerJourney} />
         <AboutSection person={personalInfo} stats={aboutStats} experienceItems={experienceItems} />
+        <BrandsSection brands={brandItems} />
         <SkillsSection groups={skillGroups} />
         <WorkSection projects={projectItems} />
+        <WebAppsSection items={webAppItems} />
         <PhotographySection photos={photoItems} />
         <ContactSection person={personalInfo} socials={socialLinks} />
       </main>
-      <Footer person={personalInfo} links={navLinks} />
+      <SiteFooter person={personalInfo} theme={theme} />
     </div>
   );
 }

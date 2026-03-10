@@ -24,6 +24,7 @@ function FlowPipeline({ photo }) {
 
 export default function PhotographySection({ photos }) {
   const [activePhoto, setActivePhoto] = useState(null);
+  const isSingleClient = photos.length === 1;
 
   useEffect(() => {
     if (!activePhoto) {
@@ -48,33 +49,39 @@ export default function PhotographySection({ photos }) {
   return (
     <>
       <section id="photography" className="section-frame section-light border-b border-[var(--border-soft)]">
-        <div className="mx-auto max-w-[88rem] px-4 py-16 text-center md:px-8 lg:py-24">
-          <p className="section-eyebrow">Field Observations</p>
-          <h2 className="photo-title">Photography.</h2>
-          <p className="photo-note">
-            Placeholder mode enabled. Click a tile to edit its case-study flow and attach final media later.
-          </p>
+        <div className="section-wrap section-pad">
+          <div className="portfolio-shell">
+            <div className="portfolio-header">
+              <div>
+                <p className="section-eyebrow">Field Observations</p>
+                <h2 className="portfolio-title">Visual Evidence.</h2>
+              </div>
+              <p className="portfolio-note">
+                Placeholder mode enabled. Click a tile to edit each case file and attach final photography later.
+              </p>
+            </div>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {photos.map((photo) => (
-              <button
-                key={photo.title}
-                type="button"
-                onClick={() => setActivePhoto(photo)}
-                className="photo-frame photo-clickable text-left"
-              >
-                <div className="photo-placeholder-media">
-                  <Upload size={20} />
-                  <span>[ Upload case-study media ]</span>
-                </div>
-                <div className="photo-overlay">
-                  <div className="photo-overlay-content">
-                    <Aperture size={16} />
-                    <span>Open Flow Pipeline</span>
+            <div className={isSingleClient ? 'mt-10 grid gap-4 photo-grid-single' : 'mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3'}>
+              {photos.map((photo) => (
+                <button
+                  key={photo.title}
+                  type="button"
+                  onClick={() => setActivePhoto(photo)}
+                  className="photo-frame photo-clickable text-left"
+                >
+                  <div className="photo-placeholder-media">
+                    <Upload size={20} />
+                    <span>[ Upload photography media ]</span>
                   </div>
-                </div>
-              </button>
-            ))}
+                  <div className="photo-overlay">
+                    <div className="photo-overlay-content">
+                      <Aperture size={16} />
+                      <span>Open Case File</span>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
