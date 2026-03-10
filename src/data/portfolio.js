@@ -18,7 +18,7 @@ export const personalInfo = {
   summary:
     'I build visual systems, social content, and brand experiences that make ideas easier to trust, remember, and act on.',
   bio: [
-    'I\'m a creative enthusiast with a passion for design, technology, and innovation. Driven by a desire to challenge myself both creatively and personally, I focus on executing practical, creative solutions that solve real client challenges.',
+    'I am a creative enthusiast with a passion for design, technology, and innovation. Driven by a desire to challenge myself both creatively and personally, I focus on practical solutions that solve real client challenges.',
     'Currently operating as the Chief Designer and Multimedia Executive at Servis Kereta Iridium, leading creative direction, branding, and multimedia content creation.',
   ],
   portrait: {
@@ -63,18 +63,15 @@ export const experienceItems = [
 export const skillGroups = [
   {
     title: 'Brand Systems',
-    description: 'Auditing your visual symptoms. Executing a comprehensive cure for market positioning.',
-    items: ['Brand identity', 'Art direction', 'Campaign visuals', 'Print layouts'],
+    description: 'Auditing visual symptoms and creating a clear cure for market positioning.',
   },
   {
     title: 'Content Production',
-    description: 'Structuring the interface. Removing friction to boost total conversion probability.',
-    items: ['Social media design', 'Video editing', 'Motion graphics', 'Photography curation'],
+    description: 'Structuring interfaces and content systems to reduce friction and improve conversion.',
   },
   {
     title: 'Tools & Workflow',
-    description: 'Dynamic content surgery. Precision cuts and narrative framing that captures attention.',
-    items: ['Adobe CC', 'Meta Business Suite', 'Unreal Engine', 'Blender'],
+    description: 'High-velocity editing and narrative framing for social and campaign performance.',
   },
 ];
 
@@ -82,99 +79,73 @@ export const projectItems = [
   {
     title: 'Iridium Content Architecture',
     category: 'Social Media Design / Video Production',
-    summary:
-      'A cleaner content system for an automotive brand that needed consistent daily output without losing personality.',
-    impact:
-      'Focused on repeatable visual language, sharper campaign pacing, and multimedia assets that could scale across promotions.',
-    media: {
-      src: '/photo1.webp',
-      alt: 'Automotive-themed portfolio preview for Iridium Content Architecture',
-    },
+    summary: 'Placeholder ready. Upload final media to activate this case study visual.',
+    media: null,
     href: '#contact',
-    featured: true,
   },
   {
     title: 'Henna Brand Identity',
     category: 'Visual Identity / Print Layouts',
-    summary:
-      'Refined a wellness brand presence into a softer, more recognizable system across social content and product storytelling.',
-    impact:
-      'Supported audience growth with more cohesive campaign styling and a stronger visual memory across touchpoints.',
-    media: {
-      src: '/photo2.webp',
-      alt: 'Brand identity preview for HennaLine Organics',
-    },
+    summary: 'Placeholder ready. Upload final media to activate this case study visual.',
+    media: null,
     href: '#contact',
-    featured: true,
   },
 ];
 
 export const photoItems = [
   {
-    title: 'Automotive Detail Study',
-    src: '/photo1.webp',
-    alt: 'Automotive photography detail study',
-    goals:
-      'Capture premium surface texture and craftsmanship details that strengthen brand trust in service quality.',
-    challenges:
-      'Mixed lighting in workshop conditions and visual clutter from tools and background movement.',
-    results:
-      'Delivered a cleaner hero visual set used across social posts and campaign thumbnails with stronger engagement.',
+    title: 'Case Study Placeholder 01',
+    src: '',
+    alt: 'Placeholder media for case study 01',
+    goals: 'Upload goal-focused media and write the intended campaign objective.',
+    challenges: 'Document production constraints, audience friction, and visual blockers.',
+    intervention: 'Define creative diagnosis, treatment strategy, and output pipeline.',
+    results: 'Add measurable outcome, conversion lift, or engagement improvement.',
   },
   {
-    title: 'Workshop Atmosphere',
-    src: '/photo2.webp',
-    alt: 'Automotive workshop atmosphere photography',
-    goals:
-      'Show the environment as organized, credible, and active while still feeling human and approachable.',
-    challenges:
-      'Needed to balance documentary realism with polished brand aesthetics in a noisy production space.',
-    results:
-      'Created a reusable media bank for promotions, story highlights, and brand profile visual consistency.',
+    title: 'Case Study Placeholder 02',
+    src: '',
+    alt: 'Placeholder media for case study 02',
+    goals: 'Upload goal-focused media and write the intended campaign objective.',
+    challenges: 'Document production constraints, audience friction, and visual blockers.',
+    intervention: 'Define creative diagnosis, treatment strategy, and output pipeline.',
+    results: 'Add measurable outcome, conversion lift, or engagement improvement.',
   },
   {
-    title: 'Portrait Direction',
-    src: '/profile.webp',
-    alt: 'Portrait composition and lighting direction',
-    goals:
-      'Present leadership presence in a way that feels grounded, confident, and aligned with the visual identity.',
-    challenges:
-      'Limited setup time required precise framing and post-processing choices to avoid over-stylization.',
-    results:
-      'Established a signature portrait treatment now used across the portfolio hero and key profile placements.',
+    title: 'Case Study Placeholder 03',
+    src: '',
+    alt: 'Placeholder media for case study 03',
+    goals: 'Upload goal-focused media and write the intended campaign objective.',
+    challenges: 'Document production constraints, audience friction, and visual blockers.',
+    intervention: 'Define creative diagnosis, treatment strategy, and output pipeline.',
+    results: 'Add measurable outcome, conversion lift, or engagement improvement.',
   },
   {
-    title: 'Automotive Detail Study 2',
-    src: '/photo1.webp',
-    alt: 'Automotive photography detail study',
-    goals:
-      'Extend detail-based storytelling for car service campaigns focused on quality assurance.',
-    challenges:
-      'Needed consistency with previous shoots while introducing fresh framing and composition variety.',
-    results:
-      'Expanded the case-study library with adaptable visuals for reels, static posts, and print snippets.',
+    title: 'Case Study Placeholder 04',
+    src: '',
+    alt: 'Placeholder media for case study 04',
+    goals: 'Upload goal-focused media and write the intended campaign objective.',
+    challenges: 'Document production constraints, audience friction, and visual blockers.',
+    intervention: 'Define creative diagnosis, treatment strategy, and output pipeline.',
+    results: 'Add measurable outcome, conversion lift, or engagement improvement.',
   },
   {
-    title: 'Workshop Atmosphere 2',
-    src: '/photo2.webp',
-    alt: 'Automotive workshop atmosphere photography',
-    goals:
-      'Document team workflow and environment cues that communicate scale and operational reliability.',
-    challenges:
-      'Maintaining image clarity and narrative focus under fast-moving working conditions.',
-    results:
-      'Produced strong mid-funnel visual assets used in audience trust-building and service messaging.',
+    title: 'Case Study Placeholder 05',
+    src: '',
+    alt: 'Placeholder media for case study 05',
+    goals: 'Upload goal-focused media and write the intended campaign objective.',
+    challenges: 'Document production constraints, audience friction, and visual blockers.',
+    intervention: 'Define creative diagnosis, treatment strategy, and output pipeline.',
+    results: 'Add measurable outcome, conversion lift, or engagement improvement.',
   },
   {
-    title: 'Portrait Direction 2',
-    src: '/profile.webp',
-    alt: 'Portrait composition and lighting direction',
-    goals:
-      'Create alternate portrait options for multi-platform profile usage while keeping identity coherence.',
-    challenges:
-      'Ensure variation without drifting from the visual language established in the hero presentation.',
-    results:
-      'Added versatile, high-clarity portrait options for recruitment, client decks, and brand intros.',
+    title: 'Case Study Placeholder 06',
+    src: '',
+    alt: 'Placeholder media for case study 06',
+    goals: 'Upload goal-focused media and write the intended campaign objective.',
+    challenges: 'Document production constraints, audience friction, and visual blockers.',
+    intervention: 'Define creative diagnosis, treatment strategy, and output pipeline.',
+    results: 'Add measurable outcome, conversion lift, or engagement improvement.',
   },
 ];
 
@@ -183,4 +154,3 @@ export const socialLinks = [
   { label: 'Selected Work', href: '#work' },
   { label: 'Background', href: '#about' },
 ];
-

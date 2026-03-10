@@ -1,5 +1,26 @@
 import { useEffect, useState } from 'react';
-import { Aperture, X } from 'lucide-react';
+import { Aperture, Upload, X, ArrowRight } from 'lucide-react';
+
+function FlowPipeline({ photo }) {
+  const pipeline = [
+    { step: '01 / Goal', detail: photo.goals },
+    { step: '02 / Challenge', detail: photo.challenges },
+    { step: '03 / Intervention', detail: photo.intervention },
+    { step: '04 / Result', detail: photo.results },
+  ];
+
+  return (
+    <div className="flow-pipeline" role="list" aria-label="Case-study flow pipeline">
+      {pipeline.map((item, index) => (
+        <article key={item.step} className="flow-step" role="listitem">
+          <p className="flow-step-kicker">{item.step}</p>
+          <p className="flow-step-text">{item.detail}</p>
+          {index < pipeline.length - 1 ? <ArrowRight size={14} className="flow-arrow" /> : null}
+        </article>
+      ))}
+    </div>
+  );
+}
 
 export default function PhotographySection({ photos }) {
   const [activePhoto, setActivePhoto] = useState(null);
@@ -31,8 +52,7 @@ export default function PhotographySection({ photos }) {
           <p className="section-eyebrow">Field Observations</p>
           <h2 className="photo-title">Photography.</h2>
           <p className="photo-note">
-            Capturing raw texture, structure, and light across automotive
-            and conceptual environments.
+            Placeholder mode enabled. Click a tile to edit its case-study flow and attach final media later.
           </p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -43,11 +63,14 @@ export default function PhotographySection({ photos }) {
                 onClick={() => setActivePhoto(photo)}
                 className="photo-frame photo-clickable text-left"
               >
-                <img src={photo.src} alt={photo.alt} className="photo-image" />
+                <div className="photo-placeholder-media">
+                  <Upload size={20} />
+                  <span>[ Upload case-study media ]</span>
+                </div>
                 <div className="photo-overlay">
                   <div className="photo-overlay-content">
                     <Aperture size={16} />
-                    <span>View Case Study</span>
+                    <span>Open Flow Pipeline</span>
                   </div>
                 </div>
               </button>
@@ -68,28 +91,16 @@ export default function PhotographySection({ photos }) {
               <X size={16} />
             </button>
 
-            <div className="photo-modal-media-wrap">
-              <img src={activePhoto.src} alt={activePhoto.alt} className="photo-modal-media" />
+            <div className="photo-modal-media-wrap photo-modal-placeholder">
+              <Upload size={24} />
+              <p>Media placeholder</p>
+              <span>Attach final image/video for this case study</span>
             </div>
 
             <div className="photo-modal-content">
               <p className="section-eyebrow">Case Study</p>
               <h3 className="photo-modal-title">{activePhoto.title}</h3>
-
-              <div className="photo-modal-grid">
-                <article>
-                  <h4>Project Goal</h4>
-                  <p>{activePhoto.goals}</p>
-                </article>
-                <article>
-                  <h4>Challenge</h4>
-                  <p>{activePhoto.challenges}</p>
-                </article>
-                <article>
-                  <h4>Result</h4>
-                  <p>{activePhoto.results}</p>
-                </article>
-              </div>
+              <FlowPipeline photo={activePhoto} />
             </div>
           </div>
         </div>

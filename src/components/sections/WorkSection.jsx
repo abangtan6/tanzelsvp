@@ -1,4 +1,4 @@
-import { Eye, ArrowUpRight } from 'lucide-react';
+import { Eye, ArrowUpRight, Upload } from 'lucide-react';
 
 export default function WorkSection({ projects }) {
   return (
@@ -11,8 +11,7 @@ export default function WorkSection({ projects }) {
               <h2 className="portfolio-title">Clinical Interventions.</h2>
             </div>
             <p className="portfolio-note">
-              Visual identity, social media design, and video production
-              formulated for modern brand communication.
+              Placeholder mode enabled. Upload finalized visuals to activate live project media.
             </p>
           </div>
 
@@ -20,14 +19,10 @@ export default function WorkSection({ projects }) {
             {projects.slice(0, 2).map((project) => (
               <article key={project.title} className="portfolio-card">
                 <div className="portfolio-media">
-                  {project.media ? (
-                    <img src={project.media.src} alt={project.media.alt} className="h-full w-full object-cover" />
-                  ) : (
-                    <div className="portfolio-placeholder">
-                      <Eye size={20} />
-                      <span>[ Add project visual ]</span>
-                    </div>
-                  )}
+                  <div className="portfolio-placeholder">
+                    <Upload size={18} />
+                    <span>[ Upload clinical intervention media ]</span>
+                  </div>
                 </div>
                 <div className="portfolio-copy">
                   <div>
