@@ -696,9 +696,9 @@
   .site-footer-card {
     width: min(1200px, 100%);
     margin: 0 auto;
-    background: #101010;
-    color: #efe8dd;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: #ece9e2;
+    color: #111111;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     padding: 2.5rem 1.2rem;
     text-align: center;
   }
@@ -709,9 +709,9 @@
   }
 
   .dark .site-footer-card {
-    background: #ece9e2;
-    color: #111111;
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #101010;
+    color: #efe8dd;
+    border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   .site-footer-brand {
@@ -737,7 +737,7 @@
 
   .site-footer-nav a {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(17, 17, 17, 0.86);
   }
 
   .site-footer-meta {
@@ -745,7 +745,7 @@
     display: grid;
     gap: 1rem;
     align-items: center;
-    color: rgba(255, 255, 255, 0.62);
+    color: rgba(17, 17, 17, 0.58);
     font-size: 1.1rem;
   }
 
@@ -756,28 +756,28 @@
   }
 
   .site-footer-socials a {
-    color: rgba(255, 255, 255, 0.62);
+    color: rgba(17, 17, 17, 0.58);
     transition: color 0.2s ease;
   }
 
   .site-footer-socials a:hover {
-    color: #ffffff;
+    color: #111111;
   }
 
   .dark .site-footer-nav a {
-    color: rgba(17, 17, 17, 0.86);
+    color: rgba(255, 255, 255, 0.86);
   }
 
   .dark .site-footer-meta {
-    color: rgba(17, 17, 17, 0.58);
+    color: rgba(255, 255, 255, 0.62);
   }
 
   .dark .site-footer-socials a {
-    color: rgba(17, 17, 17, 0.58);
+    color: rgba(255, 255, 255, 0.62);
   }
 
   .dark .site-footer-socials a:hover {
-    color: #111111;
+    color: #ffffff;
   }
 
   @screen lg {
@@ -882,3 +882,6 @@
     background-position: 20px 0;
   }
 }
+
+
+

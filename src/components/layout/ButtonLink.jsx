@@ -5,7 +5,7 @@ export default function ButtonLink({ href, children, variant = 'primary', classN
   const variantClassName =
     variant === 'secondary'
       ? 'border-transparent border-l-[1px] border-l-[var(--border-strong)] bg-transparent text-[var(--text-primary)] hover:text-accent'
-      : 'border-accent bg-accent text-white hover:bg-[var(--text-primary)] hover:border-[var(--text-primary)]';
+      : 'border-[var(--accent)] bg-[var(--accent)] text-white hover:bg-[var(--text-primary)] hover:border-[var(--text-primary)]';
 
   return (
     <a href={href} className={`${baseClassName} ${variantClassName} ${className}`.trim()}>
@@ -13,3 +13,4 @@ export default function ButtonLink({ href, children, variant = 'primary', classN
     </a>
   );
 }
+

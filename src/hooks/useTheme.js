@@ -7,12 +7,20 @@ function getInitialTheme() {
     return 'light';
   }
 
-  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-  if (storedTheme === 'light' || storedTheme === 'dark') {
-    return storedTheme;
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme;
+    }
+  } catch {
+    return 'light';
   }
 
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  if (typeof window.matchMedia === 'function') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  return 'light';
 }
 
 export function useTheme() {
@@ -22,7 +30,12 @@ export function useTheme() {
     const root = document.documentElement;
     root.classList.toggle('dark', theme === 'dark');
     root.dataset.theme = theme;
-    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {
+      // Ignore storage write issues to avoid breaking render in restricted contexts.
+    }
   }, [theme]);
 
   return {

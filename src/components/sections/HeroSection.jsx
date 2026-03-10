@@ -1,4 +1,4 @@
-import { Activity, Pulse } from 'lucide-react';
+import { Activity, HeartPulse } from 'lucide-react';
 
 export default function HeroSection({ person }) {
   return (
@@ -35,10 +35,11 @@ export default function HeroSection({ person }) {
               <span className="portrait-name">{person.name}</span>
               <span className="portrait-role">Chief Designer / Multimedia</span>
             </div>
-            <Pulse size={14} className="portrait-pulse" />
+            <HeartPulse size={14} className="portrait-pulse" />
           </div>
         </div>
       </div>
     </section>
   );
 }
+
