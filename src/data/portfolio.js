@@ -223,10 +223,10 @@ export const careerJourney = [
 
 export const brandItems = [
   { name: 'Iridium', src: '/brands/iridium.webp' },
-  { name: 'Wexy', src: '/brands/wexy.webp' },
-  { name: 'Bunkface', src: '/brands/bf.webp' },
-  { name: 'Aikira Tari', src: '/brands/aikira-tari.webp' },
-  { name: 'Hennaline', src: '/brands/hennaline.webp' },
+  { name: 'Wexy', src: '/brands/wexy.svg' },
+  { name: 'Bunkface', src: '/brands/bf.svg' },
+  { name: 'Aikira Tari', src: '/brands/aikira-tari.webp', darkSrc: '/brands/aikira-tari-dark.webp' },
+  { name: 'Hennaline', src: '/brands/hennaline.webp', darkSrc: '/brands/hennaline-dark.webp' },
 ];
 
 export const projectItems = [

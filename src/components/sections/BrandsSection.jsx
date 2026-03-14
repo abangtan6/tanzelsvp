@@ -1,6 +1,6 @@
 import { Upload } from 'lucide-react';
 
-export default function BrandsSection({ brands = [] }) {
+export default function BrandsSection({ brands = [], theme = 'light' }) {
   const getBrandSlug = (name = '') => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
   return (
@@ -17,12 +17,13 @@ export default function BrandsSection({ brands = [] }) {
           <div className="brands-grid">
             {brands.map((brand) => {
               const brandSlug = getBrandSlug(brand.name);
+              const brandSrc = theme === 'dark' && brand.darkSrc ? brand.darkSrc : brand.src;
 
               return (
                 <article key={brand.name} className="brand-logo-slot">
-                  {brand.src ? (
+                  {brandSrc ? (
                     <img
-                      src={brand.src}
+                      src={brandSrc}
                       alt={brand.name}
                       className={`brand-logo-image brand-logo-image-${brandSlug}`}
                       loading="lazy"

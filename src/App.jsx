@@ -37,7 +37,7 @@ export default function App() {
         <HeroSection person={personalInfo} />
         <CareerJourneySection journey={careerJourney} />
         <AboutSection person={personalInfo} stats={aboutStats} experienceItems={experienceItems} />
-        <BrandsSection brands={brandItems} />
+        <BrandsSection brands={brandItems} theme={theme} />
         <SkillsSection groups={skillGroups} />
         <WorkSection projects={projectItems} />
         <WebAppsSection items={webAppItems} />
