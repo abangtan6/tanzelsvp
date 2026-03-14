@@ -222,11 +222,76 @@ export const careerJourney = [
 ];
 
 export const brandItems = [
-  { name: 'Iridium', src: '/brands/iridium.svg' },
-  { name: 'Wexy', src: '/brands/wexy.svg' },
-  { name: 'Bunkface', src: '/brands/bf.svg' },
-  { name: 'Aikira Tari', src: '/brands/aikira-tari.svg', darkSrc: '/brands/aikira-tari-dark.svg' },
-  { name: 'Hennaline', src: '/brands/hennaline.webp', darkSrc: '/brands/hennaline-dark.svg' },
+  {
+    name: 'Iridium',
+    src: '/brands/iridium.webp',
+    duration: 'Current',
+    role: 'In-house Multimedia Designer',
+    contribution:
+      'Led print design outputs, social media content, on-ground creative direction, and vendor coordination for signage production.',
+    value:
+      'Kept the service centre visual system consistent across physical materials and digital touchpoints while supporting production decisions.',
+    layout: 'feature',
+  },
+  {
+    name: 'Wexy',
+    src: '/brands/wexy.svg',
+    duration: '3 months',
+    role: 'Performance Content & Marketing Support',
+    contribution:
+      'Recorded and edited ad-ready content for Facebook and Instagram, wrote campaign copy, and tracked competitor patterns.',
+    value:
+      'Delivered fast-turnaround content and sharper messaging support for short-cycle digital campaigns during a focused relocation window.',
+    layout: 'standard',
+  },
+  {
+    name: 'Bunkface',
+    src: '/brands/bf.svg',
+    duration: '8 months across 7 shows',
+    role: 'Part-time Visual Jockey',
+    contribution:
+      'Designed custom 3D visuals per song, prepared high-quality footage, and sequenced media for live-stage playback.',
+    value:
+      'Improved live show coherence with performance-specific visuals and disciplined media timing tailored to each set.',
+    layout: 'compact',
+  },
+  {
+    name: 'Aikira Tari',
+    src: '/brands/aikira-tari.webp',
+    darkSrc: '/brands/aikira-tari-dark.webp',
+    duration: 'Freelance campaign',
+    role: 'Visual Campaign Contributor',
+    contribution:
+      'Produced a Festival Tari Malaysia visual package, social teaser photography, and announcement video assets.',
+    value:
+      'Supported a stronger cultural-performance presentation with campaign-ready media built for both submission and public rollout.',
+    layout: 'standard',
+  },
+  {
+    name: 'Hennaline',
+    src: '/brands/hennaline.webp',
+    darkSrc: '/brands/hennaline-dark.webp',
+    duration: 'Foundational role + 9 months assistant management',
+    role: 'Social, Content & Operations Support',
+    contribution:
+      'Managed social channels, daily graphics, Shopee support, influencer outreach, and later operational responsibilities.',
+    value:
+      'Built early cross-functional discipline across content execution, commerce support, and team coordination.',
+    layout: 'standard',
+  },
+  {
+    name: 'ASE',
+    label: 'Aida Syakira Entertainment',
+    src: '/brands/ase.svg',
+    darkSrc: '/brands/ase-dark.svg',
+    duration: 'Project umbrella',
+    role: 'Creative Delivery Partner',
+    contribution:
+      'Delivered campaign media under ASE-linked productions, including performance-facing visuals and rollout assets.',
+    value:
+      'Provided reliable visual execution across entertainment-focused briefs requiring polished presentation standards.',
+    layout: 'compact',
+  },
 ];
 
 export const projectItems = [
@@ -263,7 +328,7 @@ export const webAppItems = [
     category: 'Vite / React / Node.js / Express',
     summary: 'Lightweight dashboard system built to track vehicle service progress in one view.',
     href: 'https://iridiumtracker.onrender.com/dashboard',
-    image: '/webapp-1.webp',
+    image: 'https://image.thum.io/get/width/1200/noanimate/https://iridiumtracker.onrender.com/dashboard',
     videoSrc: '',
     caseStudy: {
       projectTitle: 'Automotive Customer Car Tracker',
@@ -297,8 +362,8 @@ export const webAppItems = [
     title: 'Automotive Landing Page',
     category: 'Website / Brand Marketing',
     summary: 'Dedicated service landing page that replaced a messy Linktree entry point from social media.',
-    href: 'https://iridiumhq.netlify.app/',
-    image: '/webapp-2.webp',
+    href: 'https://websiteiridium.onrender.com/',
+    image: 'https://image.thum.io/get/width/1200/noanimate/https://websiteiridium.onrender.com/',
     videoSrc: '',
     caseStudy: {
       projectTitle: 'Automotive Landing Page Redesign',
@@ -330,7 +395,7 @@ export const webAppItems = [
         'Compared to Linktree, the new page creates a stronger first impression, clearer service guidance, and a more professional brand entry point.',
       links: [
         { label: 'Before (Linktree)', href: 'https://linktr.ee/serviskeretairidiumhq' },
-        { label: 'After (Landing Page)', href: 'https://iridiumhq.netlify.app/' },
+        { label: 'After (Landing Page)', href: 'https://websiteiridium.onrender.com/' },
       ],
     },
   },
@@ -342,6 +407,9 @@ export const photoItems = [
     title: 'Client Field Observation',
     src: '',
     alt: 'Placeholder media for single-client field observation',
+    contextLogo: '/brands/aikira-tari.svg',
+    contextLogoDark: '/brands/aikira-tari-dark.svg',
+    contextLabel: 'Aikira Tari reference',
     goals: 'Document the core objective for this client visual direction.',
     challenges: 'Capture context, constraints, and production limitations.',
     intervention: 'Outline the treatment strategy used in capture and post.',

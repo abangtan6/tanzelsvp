@@ -22,9 +22,15 @@ function FlowPipeline({ photo }) {
   );
 }
 
-export default function PhotographySection({ photos }) {
+export default function PhotographySection({ photos, theme = 'light' }) {
   const [activePhoto, setActivePhoto] = useState(null);
   const isSingleClient = photos.length === 1;
+  const contextPhoto = photos[0] || null;
+  const contextLogo = contextPhoto
+    ? theme === 'dark' && contextPhoto.contextLogoDark
+      ? contextPhoto.contextLogoDark
+      : contextPhoto.contextLogo
+    : null;
 
   useEffect(() => {
     if (!activePhoto) {
@@ -57,9 +63,16 @@ export default function PhotographySection({ photos }) {
                 <h2 className="portfolio-title">Visual Evidence.</h2>
               </div>
               <p className="portfolio-note">
-                Placeholder mode enabled. Click a tile to edit each case file and attach final photography later.
+                Visual evidence in this segment currently references Aikira Tari. Click a tile to edit each case file and attach final
+                photography later.
               </p>
             </div>
+            {contextLogo ? (
+              <div className="photo-context-chip">
+                <img src={contextLogo} alt={contextPhoto.contextLabel || 'Visual evidence reference'} className="photo-context-logo" />
+                <span>{contextPhoto.contextLabel || 'Photography reference'}</span>
+              </div>
+            ) : null}
 
             <div className={isSingleClient ? 'mt-10 grid gap-4 photo-grid-single' : 'mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3'}>
               {photos.map((photo) => (

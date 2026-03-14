@@ -41,7 +41,7 @@ export default function App() {
         <SkillsSection groups={skillGroups} />
         <WorkSection projects={projectItems} />
         <WebAppsSection items={webAppItems} />
-        <PhotographySection photos={photoItems} />
+        <PhotographySection photos={photoItems} theme={theme} />
         <ContactSection person={personalInfo} socials={socialLinks} />
       </main>
       <SiteFooter person={personalInfo} theme={theme} />
