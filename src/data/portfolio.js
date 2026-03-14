@@ -222,12 +222,11 @@ export const careerJourney = [
 ];
 
 export const brandItems = [
-  { name: 'Brand Placeholder 01', src: '' },
-  { name: 'Brand Placeholder 02', src: '' },
-  { name: 'Brand Placeholder 03', src: '' },
-  { name: 'Brand Placeholder 04', src: '' },
-  { name: 'Brand Placeholder 05', src: '' },
-  { name: 'Brand Placeholder 06', src: '' },
+  { name: 'Iridium', src: '/brands/iridium.webp' },
+  { name: 'Wexy', src: '/brands/wexy.webp' },
+  { name: 'RIF', src: '/brands/rif.webp' },
+  { name: 'Alkira Tari', src: '/brands/alkira-tari.webp' },
+  { name: 'Hennaline', src: '/brands/hennaline.webp' },
 ];
 
 export const projectItems = [
