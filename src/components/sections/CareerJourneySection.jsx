@@ -91,9 +91,12 @@ export default function CareerJourneySection({ journey = [] }) {
   return (
     <section id="journey" className="section-frame section-light border-b border-[var(--border-soft)] journey-section">
       <div className="section-wrap section-pad">
-        <div className="journey-header">
-          <h2 className="editorial-title">Career Journey</h2>
-          <p className="journey-subtitle">A timeline of where I&apos;ve been - and where I&apos;m going.</p>
+        <div className="portfolio-header portfolio-header-match">
+          <div>
+            <p className="section-eyebrow">Career Logbook</p>
+            <h2 className="portfolio-title">Career Journey.</h2>
+          </div>
+          <p className="portfolio-note">A timeline of where I&apos;ve been and where I&apos;m heading next.</p>
         </div>
 
         <div className="journey-grid-wrap journey-bento-wrap">
@@ -131,6 +134,7 @@ export default function CareerJourneySection({ journey = [] }) {
                       <StatusIcon size={13} />
                     </span>
                     <p className="journey-period">{item.period}</p>
+                    {isPresent ? <span className="journey-status-pill">Current Chapter</span> : null}
                   </div>
                   <h3 className="journey-role">{item.role}</h3>
                   <div className="journey-company-row">

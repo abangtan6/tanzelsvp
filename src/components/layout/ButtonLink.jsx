@@ -1,4 +1,4 @@
-export default function ButtonLink({ href, children, variant = 'primary', className = '' }) {
+export default function ButtonLink({ href, children, variant = 'primary', className = '', ...props }) {
   const baseClassName =
     'inline-flex items-center justify-center border px-5 py-3 text-[12px] font-bold uppercase tracking-[0.16em] transition duration-200 hover:-translate-y-px focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
 
@@ -8,7 +8,7 @@ export default function ButtonLink({ href, children, variant = 'primary', classN
       : 'border-[var(--accent)] bg-[var(--accent)] text-white hover:bg-[var(--text-primary)] hover:border-[var(--text-primary)]';
 
   return (
-    <a href={href} className={`${baseClassName} ${variantClassName} ${className}`.trim()}>
+    <a href={href} className={`${baseClassName} ${variantClassName} ${className}`.trim()} {...props}>
       {children}
     </a>
   );

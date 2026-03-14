@@ -36,12 +36,12 @@ export default function BrandsSection({ brands = [], theme = 'light' }) {
     <section id="brands" className="section-frame section-light border-b border-[var(--border-soft)]">
       <div className="section-wrap section-pad">
         <div className="brands-shell">
-          <div className="brands-header">
+          <div className="portfolio-header portfolio-header-match">
             <div>
               <p className="section-eyebrow">Partner Logbook</p>
-              <h2 className="brands-title">Allies On Record.</h2>
+              <h2 className="portfolio-title">Allies On Record.</h2>
             </div>
-            <p className="brands-note">
+            <p className="portfolio-note">
               A cross-industry record of creative partnerships spanning brand execution, social content, live visual performance,
               campaign support, and production coordination.
             </p>
@@ -62,7 +62,7 @@ export default function BrandsSection({ brands = [], theme = 'light' }) {
                 >
                   {brandSrc ? (
                     <>
-                      <div className="brand-logo-surface">
+                      <div className={`brand-logo-surface ${brand.isCurrent ? 'brand-logo-surface-current' : ''}`}>
                         <img
                           src={brandSrc}
                           alt={brandLabel}
@@ -79,10 +79,26 @@ export default function BrandsSection({ brands = [], theme = 'light' }) {
                         </span>
                       </div>
                       <div className="brand-insight-box" aria-label={`${brandLabel} contribution details`}>
-                        <p className="brand-insight-kicker">{brand.duration}</p>
-                        <h4>{brand.role}</h4>
+                        <div className="brand-insight-head">
+                          <div className="brand-insight-brand">
+                            {brandSrc && !brand.isCurrent ? (
+                              <img
+                                src={brandSrc}
+                                alt=""
+                                aria-hidden="true"
+                                className="brand-insight-logo"
+                              />
+                            ) : null}
+                            <h4>{brandLabel}</h4>
+                          </div>
+                          <span className={`brand-duration-chip brand-insight-duration ${durationMeta.className}`}>
+                            <DurationIcon size={10} />
+                            {durationMeta.label}
+                          </span>
+                        </div>
+                        <p className="brand-insight-role">{brand.role}</p>
                         <ul className="brand-insight-list">
-                          {(brand.highlights || []).slice(0, 5).map((entry) => (
+                          {(brand.highlights || []).slice(0, 3).map((entry) => (
                             <li key={`${brand.name}-${entry}`}>{entry}</li>
                           ))}
                         </ul>

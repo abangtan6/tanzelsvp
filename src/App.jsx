@@ -35,13 +35,13 @@ export default function App() {
       <Navbar links={navLinks} theme={theme} onToggleTheme={toggleTheme} person={personalInfo} />
       <main id="main-content">
         <HeroSection person={personalInfo} />
-        <CareerJourneySection journey={careerJourney} />
         <AboutSection person={personalInfo} stats={aboutStats} experienceItems={experienceItems} />
         <BrandsSection brands={brandItems} theme={theme} />
-        <SkillsSection groups={skillGroups} />
         <WorkSection projects={projectItems} />
+        <SkillsSection groups={skillGroups} />
         <WebAppsSection items={webAppItems} />
         <PhotographySection photos={photoItems} theme={theme} />
+        <CareerJourneySection journey={careerJourney} />
         <ContactSection person={personalInfo} socials={socialLinks} />
       </main>
       <SiteFooter person={personalInfo} theme={theme} />

@@ -15,7 +15,9 @@ export default function HeroSection({ person }) {
           <div>
             <h1 className="hero-title-main">{person.heroLead}</h1>
             <p className="hero-title-accent cure-title">
-              <span className="cure-line">{person.heroAccent}</span>
+              <span className="cure-line" data-text={person.heroAccent}>
+                {person.heroAccent}
+              </span>
             </p>
           </div>
 

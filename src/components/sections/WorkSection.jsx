@@ -15,13 +15,13 @@ export default function WorkSection({ projects }) {
     <section id="work" className="section-frame section-light border-b border-[var(--border-soft)]">
       <div className="section-wrap section-pad">
         <div className="portfolio-shell">
-          <div className="portfolio-header">
+          <div className="portfolio-header portfolio-header-match">
             <div>
               <p className="section-eyebrow">Brand Case Files</p>
               <h2 className="portfolio-title">Company Diagnosed.</h2>
             </div>
             <p className="portfolio-note">
-              Placeholder mode enabled. Upload finalized visuals to activate live project media.
+              A practical record of brand work, built around clear visual decisions and production-ready outcomes.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function WorkSection({ projects }) {
                 <div className="portfolio-copy">
                   <div>
                     <h3 className="portfolio-card-title">{project.title}</h3>
-                    <p className="portfolio-card-category">{project.category}</p>
+                    {project.category ? <p className="portfolio-card-category">{project.category}</p> : null}
                     {project.focus ? <p className="portfolio-project-focus">{project.focus}</p> : null}
                   </div>
                   <a href={project.href} className="portfolio-link" aria-label={`View ${project.title}`}>

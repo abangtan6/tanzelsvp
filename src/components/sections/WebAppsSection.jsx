@@ -32,6 +32,7 @@ function CaseStudySection({ step, title, Icon, isResult = false, children }) {
 export default function WebAppsSection({ items = [] }) {
   const [activeItem, setActiveItem] = useState(null);
   const [brokenPreviews, setBrokenPreviews] = useState({});
+  const [brokenCaseVideos, setBrokenCaseVideos] = useState({});
 
   useEffect(() => {
     if (!activeItem) {
@@ -84,21 +85,21 @@ export default function WebAppsSection({ items = [] }) {
       <section id="web-apps" className="section-frame section-light border-b border-[var(--border-soft)]">
         <div className="section-wrap section-pad">
           <div className="portfolio-shell">
-            <div className="portfolio-header">
+            <div className="portfolio-header portfolio-header-match">
               <div>
                 <p className="section-eyebrow">Recent Builds</p>
                 <h2 className="portfolio-title">Digital Prescriptions.</h2>
               </div>
               <p className="portfolio-note">
-                A focused snapshot of recent product interfaces and web experiences shipped across different scopes.
+                A concise selection of recent web builds, showing how each product was shaped from problem to implementation.
               </p>
             </div>
 
             <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-2">
               {items.map((item) => (
-                <article key={item.title} className="portfolio-card">
+                <article key={item.title} className="portfolio-card portfolio-card-webapp">
                   <div className="portfolio-media">
-                    {item.image && !brokenPreviews[item.title] ? (
+                    {(item.previewVideoSrc || item.videoSrc || item.image) && !brokenPreviews[item.title] ? (
                       <div className={`portfolio-media-browser ${item.previewMode === 'mobile' ? 'portfolio-media-browser-mobile' : ''}`}>
                         <div className="portfolio-browser-bar">
                           <span className="portfolio-browser-dot" />
@@ -106,7 +107,35 @@ export default function WebAppsSection({ items = [] }) {
                           <span className="portfolio-browser-dot" />
                           <p>{getHostLabel(item.href)}</p>
                         </div>
-                        {item.previewMode === 'mobile' ? (
+                        {item.previewVideoSrc || item.videoSrc ? (
+                          item.previewMode === 'mobile' ? (
+                            <div className="portfolio-mobile-frame">
+                              <video
+                                src={item.previewVideoSrc || item.videoSrc}
+                                className="portfolio-media-image portfolio-media-image-mobile portfolio-media-video"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="metadata"
+                                poster={item.image || undefined}
+                                onError={() => setBrokenPreviews((current) => ({ ...current, [item.title]: true }))}
+                              />
+                            </div>
+                          ) : (
+                            <video
+                              src={item.previewVideoSrc || item.videoSrc}
+                              className="portfolio-media-image portfolio-media-video"
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              preload="metadata"
+                              poster={item.image || undefined}
+                              onError={() => setBrokenPreviews((current) => ({ ...current, [item.title]: true }))}
+                            />
+                          )
+                        ) : item.previewMode === 'mobile' ? (
                           <div className="portfolio-mobile-frame">
                             <img
                               src={item.image}
@@ -169,21 +198,25 @@ export default function WebAppsSection({ items = [] }) {
               <X size={16} />
             </button>
 
-            <div className="photo-modal-media-wrap">
-              {activeItem.videoSrc ? (
+            <div className="photo-modal-media-wrap photo-modal-media-wrap-webapp">
+              {activeItem.caseVideoSrc && !brokenCaseVideos[activeItem.title] ? (
                 <video
                   controls
                   preload="metadata"
-                  className="portfolio-media-image"
-                  poster={activeItem.image || undefined}
+                  className="portfolio-modal-video"
+                  onError={() => setBrokenCaseVideos((current) => ({ ...current, [activeItem.title]: true }))}
                 >
-                  <source src={activeItem.videoSrc} type="video/mp4" />
+                  <source src={activeItem.caseVideoSrc} type="video/mp4" />
                 </video>
               ) : (
                 <div className="webapp-video-placeholder">
                   <Video size={24} />
-                  <p>Video walkthrough placeholder</p>
-                  <span>Add `videoSrc` in `webAppItems` to embed a real navigation walkthrough.</span>
+                  <p>Full walkthrough placeholder</p>
+                  <span>
+                    {activeItem.caseVideoHintPath
+                      ? `Add full video at: ${activeItem.caseVideoHintPath}`
+                      : 'Add `caseVideoSrc` in `webAppItems` to embed the full walkthrough video.'}
+                  </span>
                 </div>
               )}
             </div>
@@ -219,8 +252,9 @@ export default function WebAppsSection({ items = [] }) {
                         {section.links?.length ? (
                           <div className="webapp-case-links">
                             {section.links.map((link) => (
-                              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="portfolio-link">
-                                {link.label}
+                              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="webapp-result-cta">
+                                <span>{link.label}</span>
+                                <ArrowUpRight size={13} />
                               </a>
                             ))}
                           </div>
@@ -236,8 +270,8 @@ export default function WebAppsSection({ items = [] }) {
                 })}
               </div>
 
-              <a href={activeItem.href} className="portfolio-link mt-5 inline-flex items-center gap-2" target="_blank" rel="noreferrer">
-                Visit Live Project
+              <a href={activeItem.href} className="webapp-clinical-cta" target="_blank" rel="noreferrer">
+                Open Website
                 <ArrowUpRight size={15} />
               </a>
             </div>

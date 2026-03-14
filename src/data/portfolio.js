@@ -1,17 +1,17 @@
 export const navLinks = [
   { label: 'Background', href: '#about' },
-  { label: 'Career Journey', href: '#journey' },
   { label: 'Brands', href: '#brands' },
-  { label: 'Diagnostics', href: '#diagnostics' },
   { label: 'Brand Case Files', href: '#work' },
+  { label: 'Diagnostics', href: '#diagnostics' },
   { label: 'Web Apps', href: '#web-apps' },
   { label: 'Photography', href: '#photography' },
+  { label: 'Career Journey', href: '#journey' },
 ];
 
 export const personalInfo = {
   name: 'Tanzel Ur Rehman',
   shortName: 'Tanzel',
-  title: 'Multimedia Designer',
+  title: 'Visual Designer',
   location: 'Selangor, Malaysia',
   availability: 'Open to design and multimedia roles',
   email: 'mailto:rehmantanzel@gmail.com',
@@ -22,7 +22,7 @@ export const personalInfo = {
     'I build visual systems, social content, and brand experiences that make ideas easier to trust, remember, and act on.',
   bio: [
     'I am a creative enthusiast with a passion for design, technology, and innovation. Driven by a desire to challenge myself both creatively and personally, I focus on practical solutions that solve real client challenges.',
-    'Currently operating as Multimedia Designer for Servis Kereta Iridium, leading creative direction, branding, and multimedia content creation.',
+    'Currently operating as Visual Designer for Servis Kereta Iridium, leading creative direction, branding, and multimedia content creation.',
   ],
   portrait: {
     src: '/profile.webp',
@@ -61,7 +61,7 @@ export const aboutStats = [
 export const experienceItems = [
   {
     period: '2024 - Current',
-    role: 'Multimedia Designer',
+    role: 'Visual Designer',
     company: 'Servis Kereta Iridium',
     summary:
       'Lead the creative direction for all multimedia content. Design visual assets including graphics, animations, and 3D models. Manage social media strategies focusing on the Malaysian automotive market.',
@@ -97,7 +97,7 @@ export const skillGroups = [
   {
     title: 'Digital Marketing',
     code: '04_MARKETING',
-    displayTitle: 'Digital Marketing',
+    displayTitle: 'Digital\u00a0Marketing',
     description: 'Executing targeted campaigns using structured planning, audience insights, and measured optimization.',
   },
   {
@@ -134,8 +134,8 @@ export const careerJourneyLegacy = [
     type: 'past',
   },
   {
-    period: 'March 2024 — Present',
-    role: 'Multimedia / Design Role',
+    period: 'March 2024 - Present',
+    role: 'Visual Designer',
     company: 'Iridium',
     description:
       'Currently producing multimedia content, design assets, and creative marketing materials.',
@@ -192,7 +192,7 @@ export const careerJourney = [
   },
   {
     period: 'March 2024 - Present',
-    role: 'Multimedia / Design Role',
+    role: 'Visual Designer',
     company: 'Servis Kereta Iridium',
     companyLogo: '',
     description: 'Leading multimedia production, visual systems, and marketing design outputs.',
@@ -225,41 +225,41 @@ export const brandItems = [
   {
     name: 'Iridium',
     src: '/brands/iridium.svg',
-    duration: 'Current',
+    duration: 'Current • 2 YR +',
     statusType: 'current',
     isCurrent: true,
     role: 'In-house creative & visual communications',
     highlights: [
-      'Designed print and visual materials: flyers, foamboards, banners, shirts, lanyards, and online assets.',
-      'Coordinated suppliers for signboard materials, structure planning, and pricing alignment.',
-      'Supported outsourced digital marketing with edited videos and practical creative direction feedback.',
-      'Maintained social channels and occasionally coached new staff for TikTok content shoots.',
+      'Designed print assets, signage, uniforms, and digital brand materials.',
+      'Coordinated signboard vendors on specs, structure, and pricing.',
+      'Supported social and video direction, including TikTok shoot coaching.',
     ],
     layout: 'feature',
   },
   {
-    name: 'Wexy',
-    src: '/brands/wexy.webp',
-    duration: '3 mo',
-    statusType: 'short',
-    role: 'Short-term performance content support',
+    name: 'Hennaline',
+    src: '/brands/hennaline.webp',
+    darkSrc: '/brands/hennaline-dark.svg',
+    duration: '2 YR +',
+    statusType: 'growth',
+    role: 'Foundational social, content, and ops role',
     highlights: [
-      'Recorded and edited content quickly for Facebook and Instagram ads.',
-      'Supported campaign copywriting with concise ad-focused messaging.',
-      'Ran competitor research to guide creative direction and market fit.',
+      'Ran daily social content and visual scheduling end-to-end.',
+      'Handled Shopee support and routine creative updates.',
+      'Planned influencer/KOL collaborations and ad coordination.',
     ],
     layout: 'standard',
   },
   {
     name: 'Bunkface',
-    src: '/brands/bf.webp',
+    src: '/brands/bf.svg',
     duration: '8 mo / 7 shows',
     statusType: 'show',
     role: 'Part-time live visual jockey',
     highlights: [
-      'Designed custom 3D visuals tailored to specific songs.',
-      'Managed high-quality footage libraries for live playback reliability.',
-      'Sequenced show visuals for smooth pacing and stronger stage presentation.',
+      'Built custom 3D visuals matched to song timing and mood.',
+      'Managed high-quality media sets for dependable live playback.',
+      'Sequenced visuals for cleaner live pacing.',
     ],
     layout: 'compact',
   },
@@ -271,24 +271,22 @@ export const brandItems = [
     statusType: 'freelance',
     role: 'Freelance cultural-performance campaign',
     highlights: [
-      'Produced a visual package for Festival Tari Malaysia submission.',
-      'Captured teaser photography for social pre-release content.',
-      'Created announcement and teaser video assets for rollout.',
+      'Delivered the visual package for Festival Tari Malaysia submission.',
+      'Produced teaser photography for social pre-release moments.',
+      'Edited announcement and teaser videos for campaign rollout.',
     ],
     layout: 'standard',
   },
   {
-    name: 'Hennaline',
-    src: '/brands/hennaline-dark.svg',
-    darkSrc: '/brands/hennaline-dark.svg',
-    duration: 'Growth track',
-    statusType: 'growth',
-    role: 'Foundational social, content, and ops role',
+    name: 'Wexy',
+    src: '/brands/wexy.svg',
+    duration: '3 mo',
+    statusType: 'short',
+    role: 'Short-term performance content support',
     highlights: [
-      'Managed social media end-to-end with daily graphics and content scheduling.',
-      'Handled basic Shopee e-commerce support and routine visual updates.',
-      'Proposed influencer plans and negotiated KOL ad collaborations.',
-      'Stepped into assistant management for 9 months handling operations.',
+      'Shot and edited fast-turnaround ad content for Meta platforms.',
+      'Supported campaign messaging with concise conversion-led copy.',
+      'Ran competitor scans to sharpen creative direction.',
     ],
     layout: 'standard',
   },
@@ -301,9 +299,9 @@ export const brandItems = [
     statusType: 'project',
     role: 'ASE umbrella for Aikira Tari',
     highlights: [
-      'Served as the production umbrella for the Aikira Tari visual campaign scope.',
-      'Aligned delivery context for teaser media and performance-facing assets.',
-      'Kept project communication and creative handoff structured and clear.',
+      'Served as the project umbrella for Aikira Tari campaign delivery.',
+      'Aligned teaser media output with performance-facing requirements.',
+      'Maintained clear communication and creative handoffs.',
     ],
     layout: 'standard',
   },
@@ -312,7 +310,7 @@ export const brandItems = [
 export const projectItems = [
   {
     title: 'Iridium Content Architecture',
-    category: 'Video Editing / Social Media Content',
+    category: '',
     summary: 'Placeholder ready. Upload final media to activate this case study visual.',
     focus: 'Primary Focus: TikTok video editing and short-form content performance.',
     deliverables: [
@@ -325,8 +323,9 @@ export const projectItems = [
   },
   {
     title: 'Hennaline Brand Identity',
-    category: 'Visual Identity / Print Layouts',
+    category: '',
     summary: 'Placeholder ready. Upload final media to activate this case study visual.',
+    focus: 'Primary Focus: Online brand identity and consistent social presence.',
     deliverables: [
       { type: 'photo', label: 'Photoshoot Assets', primary: true },
       { type: 'social', label: 'Social Media Posts' },
@@ -345,7 +344,9 @@ export const webAppItems = [
     href: 'https://iridiumtracker.onrender.com/dashboard',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Firidiumtracker.onrender.com%2Fdashboard?w=1600',
     previewMode: 'desktop',
-    videoSrc: '',
+    previewVideoSrc: '/videos/automotive-tracker-preview.mp4',
+    caseVideoSrc: '/videos/automotive-tracker-full.mp4',
+    caseVideoHintPath: '/public/videos/automotive-tracker-full.mp4',
     caseStudy: {
       projectTitle: 'Automotive Customer Car Tracker',
       projectSummary:
@@ -381,7 +382,9 @@ export const webAppItems = [
     href: 'https://websiteiridium.onrender.com/',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwebsiteiridium.onrender.com%2F?w=420',
     previewMode: 'mobile',
-    videoSrc: '',
+    previewVideoSrc: '/videos/automotive-landing-preview.mp4',
+    caseVideoSrc: '/videos/automotive-landing-full.mp4',
+    caseVideoHintPath: '/public/videos/automotive-landing-full.mp4',
     caseStudy: {
       projectTitle: 'Automotive Landing Page Redesign',
       projectSummary:
@@ -421,16 +424,47 @@ export const webAppItems = [
 
 export const photoItems = [
   {
-    title: 'Client Field Observation',
-    src: '',
-    alt: 'Placeholder media for single-client field observation',
-    contextLogo: '/brands/aikira-tari.webp',
-    contextLogoDark: '/brands/aikira-tari-dark.webp',
+    src: '/photo3.webp',
+    alt: 'Aikira Tari performance group portrait in monochrome styling.',
+    format: 'landscape',
+    contextLogo: '/brands/aikira-tari.svg',
+    contextLogoDark: '/brands/aikira-tari-dark.svg',
     contextLabel: 'Aikira Tari reference',
-    goals: 'Document the core objective for this client visual direction.',
-    challenges: 'Capture context, constraints, and production limitations.',
-    intervention: 'Outline the treatment strategy used in capture and post.',
-    results: 'Summarize outcomes and improvements in visual quality or engagement.',
+  },
+  {
+    src: '/photo4.webp',
+    alt: 'Aikira Tari ensemble portrait with formal attire and floral stage setting.',
+    format: 'landscape',
+  },
+  {
+    src: '/photo5.webp',
+    alt: 'Aikira Tari solo portrait with floral backdrop and stage lighting.',
+    format: 'portrait',
+  },
+  {
+    src: '/photo6.webp',
+    alt: 'Aikira Tari portrait frame with detailed costume texture and floral backdrop.',
+    format: 'landscape',
+  },
+  {
+    src: '/photo7.webp',
+    alt: 'Close-up portrait from Aikira Tari visual campaign sequence.',
+    format: 'portrait',
+  },
+  {
+    src: '/photo8.webp',
+    alt: 'Low-light portrait from Aikira Tari field photography set.',
+    format: 'portrait',
+  },
+  {
+    src: '/photo9.webp',
+    alt: 'Aikira Tari paired portrait staged in ceremonial wardrobe.',
+    format: 'landscape',
+  },
+  {
+    src: '/photo10.webp',
+    alt: 'Aikira Tari full group portrait with coordinated blue wardrobe styling.',
+    format: 'landscape',
   },
 ];
 

@@ -29,7 +29,9 @@ export default function SkillsSection({ groups }) {
               >
                 <Icon size={22} className={iconClass} />
                 <p className="service-kicker">{group.code}</p>
-                <h3 className="service-title">{group.displayTitle}</h3>
+                <h3 className={`service-title ${group.title === 'Digital Marketing' ? 'service-title-tight' : ''}`}>
+                  {group.displayTitle}
+                </h3>
                 <p className="service-text">{group.description}</p>
               </article>
             );
