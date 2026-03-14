@@ -228,11 +228,13 @@ export const brandItems = [
     duration: 'Current',
     statusType: 'current',
     isCurrent: true,
-    role: 'In-house Multimedia Designer',
-    contribution:
-      'Handled print design, social media content, signage production coordination, and day-to-day creative direction.',
-    value:
-      'Maintained a consistent service-centre visual system across physical and digital touchpoints.',
+    role: 'In-house creative & visual communications',
+    highlights: [
+      'Designed print and visual materials: flyers, foamboards, banners, shirts, lanyards, and online assets.',
+      'Coordinated suppliers for signboard materials, structure planning, and pricing alignment.',
+      'Supported outsourced digital marketing with edited videos and practical creative direction feedback.',
+      'Maintained social channels and occasionally coached new staff for TikTok content shoots.',
+    ],
     layout: 'feature',
   },
   {
@@ -240,11 +242,12 @@ export const brandItems = [
     src: '/brands/wexy.webp',
     duration: '3 mo',
     statusType: 'short',
-    role: 'Performance Content & Marketing Support',
-    contribution:
-      'Produced and edited ad-focused Facebook and Instagram content with fast turnaround.',
-    value:
-      'Strengthened campaign readiness through quick delivery, copy support, and competitor awareness.',
+    role: 'Short-term performance content support',
+    highlights: [
+      'Recorded and edited content quickly for Facebook and Instagram ads.',
+      'Supported campaign copywriting with concise ad-focused messaging.',
+      'Ran competitor research to guide creative direction and market fit.',
+    ],
     layout: 'standard',
   },
   {
@@ -252,11 +255,12 @@ export const brandItems = [
     src: '/brands/bf.webp',
     duration: '8 mo / 7 shows',
     statusType: 'show',
-    role: 'Part-time Visual Jockey',
-    contribution:
-      'Created song-specific 3D visuals and sequenced high-quality media for live playback.',
-    value:
-      'Improved live presentation quality through disciplined visual timing and show-specific adaptation.',
+    role: 'Part-time live visual jockey',
+    highlights: [
+      'Designed custom 3D visuals tailored to specific songs.',
+      'Managed high-quality footage libraries for live playback reliability.',
+      'Sequenced show visuals for smooth pacing and stronger stage presentation.',
+    ],
     layout: 'compact',
   },
   {
@@ -265,11 +269,12 @@ export const brandItems = [
     darkSrc: '/brands/aikira-tari-dark.webp',
     duration: 'Freelance',
     statusType: 'freelance',
-    role: 'Visual Campaign Contributor',
-    contribution:
-      'Built Festival Tari Malaysia campaign visuals, teaser photography, and announcement videos.',
-    value:
-      'Delivered a cohesive cultural-performance media package for submission and social rollout.',
+    role: 'Freelance cultural-performance campaign',
+    highlights: [
+      'Produced a visual package for Festival Tari Malaysia submission.',
+      'Captured teaser photography for social pre-release content.',
+      'Created announcement and teaser video assets for rollout.',
+    ],
     layout: 'standard',
   },
   {
@@ -278,11 +283,13 @@ export const brandItems = [
     darkSrc: '/brands/hennaline-dark.webp',
     duration: 'Growth track',
     statusType: 'growth',
-    role: 'Social, Content & Operations Support',
-    contribution:
-      'Managed daily social content, Shopee support, influencer outreach, and later assistant management operations.',
-    value:
-      'Built cross-functional discipline across creative execution, commerce support, and team coordination.',
+    role: 'Foundational social, content, and ops role',
+    highlights: [
+      'Managed social media end-to-end with daily graphics and content scheduling.',
+      'Handled basic Shopee e-commerce support and routine visual updates.',
+      'Proposed influencer plans and negotiated KOL ad collaborations.',
+      'Stepped into assistant management for 9 months handling operations.',
+    ],
     layout: 'standard',
   },
   {
@@ -292,12 +299,13 @@ export const brandItems = [
     darkSrc: '/brands/ase-dark.svg',
     duration: 'Project partner',
     statusType: 'project',
-    role: 'Production Partner',
-    contribution:
-      'Served as the production umbrella linked to the Aikira Tari campaign work.',
-    value:
-      'Structured delivery for performance-focused media assets with clear rollout direction.',
-    layout: 'compact',
+    role: 'ASE umbrella for Aikira Tari',
+    highlights: [
+      'Served as the production umbrella for the Aikira Tari visual campaign scope.',
+      'Aligned delivery context for teaser media and performance-facing assets.',
+      'Kept project communication and creative handoff structured and clear.',
+    ],
+    layout: 'standard',
   },
 ];
 
@@ -335,7 +343,7 @@ export const webAppItems = [
     category: 'Vite / React / Node.js / Express',
     summary: 'Lightweight dashboard system built to track vehicle service progress in one view.',
     href: 'https://iridiumtracker.onrender.com/dashboard',
-    image: 'https://image.thum.io/get/width/1200/noanimate/https://iridiumtracker.onrender.com/dashboard',
+    image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Firidiumtracker.onrender.com%2Fdashboard?w=1600',
     videoSrc: '',
     caseStudy: {
       projectTitle: 'Automotive Customer Car Tracker',
@@ -370,7 +378,7 @@ export const webAppItems = [
     category: 'Website / Brand Marketing',
     summary: 'Dedicated service landing page that replaced a messy Linktree entry point from social media.',
     href: 'https://websiteiridium.onrender.com/',
-    image: 'https://image.thum.io/get/width/1200/noanimate/https://websiteiridium.onrender.com/',
+    image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwebsiteiridium.onrender.com%2F?w=1600',
     videoSrc: '',
     caseStudy: {
       projectTitle: 'Automotive Landing Page Redesign',
@@ -414,8 +422,8 @@ export const photoItems = [
     title: 'Client Field Observation',
     src: '',
     alt: 'Placeholder media for single-client field observation',
-    contextLogo: '/brands/aikira-tari.svg',
-    contextLogoDark: '/brands/aikira-tari-dark.svg',
+    contextLogo: '/brands/aikira-tari.webp',
+    contextLogoDark: '/brands/aikira-tari-dark.webp',
     contextLabel: 'Aikira Tari reference',
     goals: 'Document the core objective for this client visual direction.',
     challenges: 'Capture context, constraints, and production limitations.',

@@ -81,8 +81,11 @@ export default function BrandsSection({ brands = [], theme = 'light' }) {
                       <div className="brand-insight-box" aria-label={`${brandLabel} contribution details`}>
                         <p className="brand-insight-kicker">{brand.duration}</p>
                         <h4>{brand.role}</h4>
-                        <p>{brand.contribution}</p>
-                        <p>{brand.value}</p>
+                        <ul className="brand-insight-list">
+                          {(brand.highlights || []).slice(0, 5).map((entry) => (
+                            <li key={`${brand.name}-${entry}`}>{entry}</li>
+                          ))}
+                        </ul>
                       </div>
                     </>
                   ) : (

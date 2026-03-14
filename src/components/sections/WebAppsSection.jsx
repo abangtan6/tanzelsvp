@@ -31,6 +31,7 @@ function CaseStudySection({ step, title, Icon, isResult = false, children }) {
 
 export default function WebAppsSection({ items = [] }) {
   const [activeItem, setActiveItem] = useState(null);
+  const [brokenPreviews, setBrokenPreviews] = useState({});
 
   useEffect(() => {
     if (!activeItem) {
@@ -70,6 +71,14 @@ export default function WebAppsSection({ items = [] }) {
     return pieces.map((piece, index) => (/^\d+%$/.test(piece) ? <strong key={`${piece}-${index}`}>{piece}</strong> : piece));
   };
 
+  const getHostLabel = (url = '') => {
+    try {
+      return new URL(url).hostname.replace('www.', '');
+    } catch {
+      return 'Live preview';
+    }
+  };
+
   return (
     <>
       <section id="web-apps" className="section-frame section-light border-b border-[var(--border-soft)]">
@@ -89,12 +98,27 @@ export default function WebAppsSection({ items = [] }) {
               {items.map((item) => (
                 <article key={item.title} className="portfolio-card">
                   <div className="portfolio-media">
-                    {item.image ? (
-                      <img src={item.image} alt={`${item.title} preview`} className="portfolio-media-image" />
+                    {item.image && !brokenPreviews[item.title] ? (
+                      <div className="portfolio-media-browser">
+                        <div className="portfolio-browser-bar">
+                          <span className="portfolio-browser-dot" />
+                          <span className="portfolio-browser-dot" />
+                          <span className="portfolio-browser-dot" />
+                          <p>{getHostLabel(item.href)}</p>
+                        </div>
+                        <img
+                          src={item.image}
+                          alt={`${item.title} preview`}
+                          className="portfolio-media-image"
+                          loading="lazy"
+                          onError={() => setBrokenPreviews((current) => ({ ...current, [item.title]: true }))}
+                        />
+                      </div>
                     ) : (
-                      <div className="portfolio-placeholder">
+                      <div className="portfolio-placeholder portfolio-preview-fallback">
                         <Upload size={18} />
-                        <span>[ Upload web app preview ]</span>
+                        <span>[ Live preview unavailable ]</span>
+                        <p>{getHostLabel(item.href)}</p>
                       </div>
                     )}
                   </div>
