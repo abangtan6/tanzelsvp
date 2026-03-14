@@ -435,7 +435,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.26rem;
-    opacity: 0.64;
+    opacity: 0.9;
     transition: opacity 0.25s ease;
   }
 
@@ -444,6 +444,8 @@
     height: 9px;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: 0 0 7px rgba(255, 120, 52, 0.24);
+    animation: paletteIdleFlicker 2.6s steps(2, end) infinite;
   }
 
   .chip-tag-palette:hover {
@@ -457,6 +459,14 @@
 
   .chip-tag-palette:hover .chip-color-dot {
     animation: paletteFlicker 0.5s steps(2, end) 1;
+  }
+
+  .chip-color-dot:nth-child(2) {
+    animation-delay: 0.22s;
+  }
+
+  .chip-color-dot:nth-child(3) {
+    animation-delay: 0.44s;
   }
 
   .chip-tag-palette:hover .chip-color-dot:nth-child(2) {
@@ -729,6 +739,7 @@
 
   .journey-grid-dragging .journey-node {
     transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease, opacity 0.24s ease;
+    animation: none;
   }
 
   .journey-grid-dragging .journey-node:not(.journey-node-is-drag) {
@@ -754,12 +765,14 @@
 
   .journey-node {
     position: relative;
-    background: rgba(248, 245, 239, 0.92);
+    background: rgba(248, 245, 239, 0.94);
     border: 1px solid rgba(255, 141, 52, 0.28);
     padding: 1rem 1rem 1.05rem;
     min-height: 11rem;
     transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
     cursor: grab;
+    animation: journeyCardDrift 7.2s ease-in-out infinite;
+    animation-delay: var(--journey-delay, 0s);
   }
 
   .dark .journey-node {
@@ -773,15 +786,15 @@
   }
 
   .journey-node-past {
-    border-left: 2px solid rgba(255, 153, 74, 0.46);
+    border-left: 2px solid rgba(180, 106, 71, 0.62);
   }
 
   .journey-node-present {
-    border-left: 2px solid rgba(255, 107, 0, 0.8);
+    border-left: 2px solid rgba(255, 128, 38, 0.9);
   }
 
   .journey-node-future {
-    border-left: 2px dashed rgba(212, 119, 54, 0.55);
+    border-left: 2px dashed rgba(209, 138, 95, 0.7);
   }
 
   .journey-node:active {
@@ -806,10 +819,28 @@
     background: rgba(255, 141, 52, 0.08);
   }
 
+  .journey-node[data-journey-type='past'] .journey-phase-icon {
+    border-color: rgba(186, 114, 81, 0.35);
+    background: rgba(186, 114, 81, 0.1);
+    color: rgba(168, 98, 67, 0.9);
+  }
+
+  .journey-node[data-journey-type='present'] .journey-phase-icon {
+    border-color: rgba(255, 128, 38, 0.38);
+    background: rgba(255, 128, 38, 0.12);
+    color: rgba(255, 119, 21, 0.94);
+  }
+
+  .journey-node[data-journey-type='future'] .journey-phase-icon {
+    border-color: rgba(210, 143, 106, 0.34);
+    background: rgba(210, 143, 106, 0.1);
+    color: rgba(186, 118, 84, 0.9);
+  }
+
   .journey-node-present {
-    border-color: rgba(255, 141, 52, 0.54);
-    box-shadow: inset 0 0 0 1px rgba(255, 141, 52, 0.14);
-    background: linear-gradient(180deg, rgba(255, 245, 234, 0.98), rgba(255, 237, 220, 0.86));
+    border-color: rgba(255, 141, 52, 0.58);
+    box-shadow: inset 0 0 0 1px rgba(255, 141, 52, 0.16), 0 8px 22px rgba(255, 112, 20, 0.1);
+    background: linear-gradient(180deg, rgba(255, 242, 226, 0.99), rgba(255, 224, 191, 0.87));
   }
 
   .journey-node-present .journey-role {
@@ -819,20 +850,20 @@
   }
 
   .dark .journey-node-present {
-    background: linear-gradient(180deg, rgba(34, 20, 10, 0.94), rgba(18, 18, 18, 0.9));
+    background: linear-gradient(180deg, rgba(54, 28, 11, 0.95), rgba(20, 18, 15, 0.92));
   }
 
   .journey-node-future {
     border-style: dashed;
-    border-color: rgba(255, 141, 52, 0.4);
-    background: linear-gradient(180deg, rgba(255, 249, 242, 0.72), rgba(252, 241, 229, 0.58));
-    box-shadow: inset 0 0 0 1px rgba(255, 141, 52, 0.1);
+    border-color: rgba(210, 143, 106, 0.52);
+    background: linear-gradient(180deg, rgba(255, 249, 245, 0.79), rgba(248, 236, 225, 0.68));
+    box-shadow: inset 0 0 0 1px rgba(214, 143, 106, 0.1);
   }
 
   .dark .journey-node-future {
-    border-color: rgba(255, 141, 52, 0.34);
-    background: rgba(18, 18, 18, 0.58);
-    box-shadow: inset 0 0 0 1px rgba(255, 141, 52, 0.12);
+    border-color: rgba(205, 137, 102, 0.42);
+    background: linear-gradient(180deg, rgba(36, 27, 23, 0.65), rgba(23, 21, 20, 0.58));
+    box-shadow: inset 0 0 0 1px rgba(205, 137, 102, 0.12);
   }
 
   .journey-period {
@@ -891,7 +922,11 @@
   }
 
   .journey-node-past {
-    background: linear-gradient(180deg, rgba(255, 251, 246, 0.96), rgba(248, 238, 228, 0.88));
+    background: linear-gradient(180deg, rgba(250, 244, 237, 0.96), rgba(236, 220, 204, 0.87));
+  }
+
+  .dark .journey-node-past {
+    background: linear-gradient(180deg, rgba(39, 29, 23, 0.9), rgba(24, 22, 20, 0.88));
   }
 
   .journey-drag-hint {
@@ -1012,7 +1047,7 @@
   .brand-logo-slot {
     position: relative;
     min-height: 10.2rem;
-    border: 1px solid var(--border-soft);
+    border: 1px solid rgba(17, 17, 17, 0.09);
     background: var(--surface-panel);
     display: flex;
     flex-direction: column;
@@ -1041,6 +1076,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0.12rem;
   }
 
   .brand-logo-caption {
@@ -1063,6 +1099,30 @@
     text-transform: uppercase;
     letter-spacing: 0.14em;
     color: var(--text-muted);
+  }
+
+  .brand-duration-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.24rem 0.34rem;
+    border: 1px solid var(--border-soft);
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--surface-light) 92%, transparent);
+    white-space: nowrap;
+  }
+
+  .brand-duration-current {
+    border-color: rgba(255, 107, 0, 0.34);
+    color: var(--accent);
+  }
+
+  .brand-duration-show {
+    border-color: rgba(255, 153, 74, 0.28);
   }
 
   .brand-insight-box {
@@ -1145,12 +1205,19 @@
     opacity: 0.96;
     transform: scale(var(--brand-scale));
     transform-origin: center;
-    transition: opacity 0.22s ease, transform 0.22s ease;
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.22)) drop-shadow(0 7px 14px rgba(26, 17, 10, 0.13));
+    transition: opacity 0.22s ease, transform 0.22s ease, filter 0.22s ease;
   }
 
   .brand-logo-slot:hover .brand-logo-image {
     opacity: 1;
     transform: translateY(-1px) scale(var(--brand-scale));
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.25)) drop-shadow(0 9px 18px rgba(26, 17, 10, 0.18));
+  }
+
+  .dark .brand-logo-image,
+  .dark .brand-logo-slot:hover .brand-logo-image {
+    filter: none;
   }
 
   .brand-logo-image-iridium {
@@ -1175,6 +1242,32 @@
 
   .brand-logo-image-ase {
     --brand-scale: 1.04;
+  }
+
+  .brand-logo-slot-current {
+    border-color: rgba(255, 132, 44, 0.44);
+    box-shadow: 0 0 0 1px rgba(255, 128, 32, 0.13), inset 0 0 0 1px rgba(255, 153, 74, 0.08);
+  }
+
+  .brand-logo-slot-current::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 107, 0, 0.06) 0%,
+      rgba(255, 171, 92, 0.2) 28%,
+      rgba(255, 107, 0, 0.05) 55%,
+      rgba(255, 179, 111, 0.18) 78%,
+      rgba(255, 107, 0, 0.06) 100%
+    );
+    background-size: 220% 220%;
+    animation: currentBrandFlow 8s linear infinite;
+  }
+
+  .brand-logo-slot-current .brand-logo-caption h3 {
+    color: color-mix(in srgb, var(--text-primary) 86%, var(--accent));
   }
 
   @media (hover: none), (max-width: 767px) {
@@ -2204,6 +2297,27 @@
   }
 }
 
+@keyframes paletteIdleFlicker {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+
+  42% {
+    opacity: 0.62;
+    transform: scale(0.92);
+    filter: brightness(0.86);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.03);
+    filter: brightness(1.15);
+  }
+}
+
 @keyframes journeySettle {
   0% {
     transform: translateY(-3px);
@@ -2214,6 +2328,17 @@
   }
 }
 
+@keyframes journeyCardDrift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
 @keyframes resultSweep {
   0% {
     background-position: 0% 50%, 0 0;
@@ -2221,6 +2346,16 @@
 
   100% {
     background-position: 200% 50%, 0 0;
+  }
+}
+
+@keyframes currentBrandFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 220% 50%;
   }
 }
 

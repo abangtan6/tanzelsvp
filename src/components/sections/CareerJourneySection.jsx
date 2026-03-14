@@ -98,7 +98,6 @@ export default function CareerJourneySection({ journey = [] }) {
 
         <div className="journey-grid-wrap journey-bento-wrap">
           <div className="journey-grid-lines" aria-hidden="true" />
-          <div className="journey-circuit journey-circuit-a" aria-hidden="true" />
           <div className="journey-circuit journey-circuit-b" aria-hidden="true" />
           <div
             className={`journey-grid journey-bento-grid ${dragState.isDragging ? 'journey-grid-dragging' : ''} ${
@@ -124,6 +123,8 @@ export default function CareerJourneySection({ journey = [] }) {
                   onDragOver={(event) => event.preventDefault()}
                   onDragEnter={() => onDragEnter(index)}
                   onDragEnd={onDragEnd}
+                  data-journey-type={item.type || 'past'}
+                  style={{ '--journey-delay': `${index * 0.35}s` }}
                 >
                   <div className="journey-meta-row">
                     <span className="journey-phase-icon" aria-hidden="true">

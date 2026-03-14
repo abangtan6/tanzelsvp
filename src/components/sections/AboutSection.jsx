@@ -1,4 +1,4 @@
-export default function AboutSection({ person, stats, experienceItems = [] }) {
+export default function AboutSection({ person, stats }) {
   const uniqueStats = Object.values(
     stats.reduce((accumulator, stat) => {
       const key = stat.value.trim().toLowerCase();
@@ -14,8 +14,8 @@ export default function AboutSection({ person, stats, experienceItems = [] }) {
 
   return (
     <section id="about" className="section-frame section-light border-b border-[var(--border-soft)]">
-      <div className="section-wrap section-pad grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <div>
+      <div className="section-wrap section-pad">
+        <div className="max-w-[56rem]">
           <h2 className="editorial-title">Background Profile</h2>
           <div className="mt-8 space-y-6 max-w-2xl text-[14px] leading-8 text-[var(--text-secondary)]">
             {person.bio.map((paragraph) => (
@@ -38,17 +38,6 @@ export default function AboutSection({ person, stats, experienceItems = [] }) {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="space-y-3">
-          {experienceItems.map((item) => (
-            <article key={`${item.company}-${item.role}`} className="resume-panel">
-              <p className="resume-period">{item.period}</p>
-              <h3 className="resume-role">{item.role}</h3>
-              <p className="resume-company">{item.company}</p>
-              <p className="resume-summary">{item.summary}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

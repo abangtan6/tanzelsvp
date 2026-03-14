@@ -226,70 +226,77 @@ export const brandItems = [
     name: 'Iridium',
     src: '/brands/iridium.webp',
     duration: 'Current',
+    statusType: 'current',
+    isCurrent: true,
     role: 'In-house Multimedia Designer',
     contribution:
-      'Led print design outputs, social media content, on-ground creative direction, and vendor coordination for signage production.',
+      'Handled print design, social media content, signage production coordination, and day-to-day creative direction.',
     value:
-      'Kept the service centre visual system consistent across physical materials and digital touchpoints while supporting production decisions.',
+      'Maintained a consistent service-centre visual system across physical and digital touchpoints.',
     layout: 'feature',
   },
   {
     name: 'Wexy',
-    src: '/brands/wexy.svg',
-    duration: '3 months',
+    src: '/brands/wexy.webp',
+    duration: '3 mo',
+    statusType: 'short',
     role: 'Performance Content & Marketing Support',
     contribution:
-      'Recorded and edited ad-ready content for Facebook and Instagram, wrote campaign copy, and tracked competitor patterns.',
+      'Produced and edited ad-focused Facebook and Instagram content with fast turnaround.',
     value:
-      'Delivered fast-turnaround content and sharper messaging support for short-cycle digital campaigns during a focused relocation window.',
+      'Strengthened campaign readiness through quick delivery, copy support, and competitor awareness.',
     layout: 'standard',
   },
   {
     name: 'Bunkface',
-    src: '/brands/bf.svg',
-    duration: '8 months across 7 shows',
+    src: '/brands/bf.webp',
+    duration: '8 mo / 7 shows',
+    statusType: 'show',
     role: 'Part-time Visual Jockey',
     contribution:
-      'Designed custom 3D visuals per song, prepared high-quality footage, and sequenced media for live-stage playback.',
+      'Created song-specific 3D visuals and sequenced high-quality media for live playback.',
     value:
-      'Improved live show coherence with performance-specific visuals and disciplined media timing tailored to each set.',
+      'Improved live presentation quality through disciplined visual timing and show-specific adaptation.',
     layout: 'compact',
   },
   {
     name: 'Aikira Tari',
     src: '/brands/aikira-tari.webp',
     darkSrc: '/brands/aikira-tari-dark.webp',
-    duration: 'Freelance campaign',
+    duration: 'Freelance',
+    statusType: 'freelance',
     role: 'Visual Campaign Contributor',
     contribution:
-      'Produced a Festival Tari Malaysia visual package, social teaser photography, and announcement video assets.',
+      'Built Festival Tari Malaysia campaign visuals, teaser photography, and announcement videos.',
     value:
-      'Supported a stronger cultural-performance presentation with campaign-ready media built for both submission and public rollout.',
+      'Delivered a cohesive cultural-performance media package for submission and social rollout.',
     layout: 'standard',
   },
   {
     name: 'Hennaline',
     src: '/brands/hennaline.webp',
     darkSrc: '/brands/hennaline-dark.webp',
-    duration: 'Foundational role + 9 months assistant management',
+    duration: 'Growth track',
+    statusType: 'growth',
     role: 'Social, Content & Operations Support',
     contribution:
-      'Managed social channels, daily graphics, Shopee support, influencer outreach, and later operational responsibilities.',
+      'Managed daily social content, Shopee support, influencer outreach, and later assistant management operations.',
     value:
-      'Built early cross-functional discipline across content execution, commerce support, and team coordination.',
+      'Built cross-functional discipline across creative execution, commerce support, and team coordination.',
     layout: 'standard',
   },
   {
     name: 'ASE',
-    label: 'Aida Syakira Entertainment',
+    label: 'ASE',
     src: '/brands/ase.svg',
     darkSrc: '/brands/ase-dark.svg',
-    duration: 'Project umbrella',
-    role: 'Creative Delivery Partner',
+    duration: 'Project partner',
+    statusType: 'project',
+    role: 'Production Partner',
     contribution:
-      'Delivered campaign media under ASE-linked productions, including performance-facing visuals and rollout assets.',
+      'Served as the production umbrella linked to the Aikira Tari campaign work.',
     value:
-      'Provided reliable visual execution across entertainment-focused briefs requiring polished presentation standards.',
+      'Structured delivery for performance-focused media assets with clear rollout direction.',
     layout: 'compact',
   },
 ];
