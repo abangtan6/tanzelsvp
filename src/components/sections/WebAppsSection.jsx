@@ -99,20 +99,32 @@ export default function WebAppsSection({ items = [] }) {
                 <article key={item.title} className="portfolio-card">
                   <div className="portfolio-media">
                     {item.image && !brokenPreviews[item.title] ? (
-                      <div className="portfolio-media-browser">
+                      <div className={`portfolio-media-browser ${item.previewMode === 'mobile' ? 'portfolio-media-browser-mobile' : ''}`}>
                         <div className="portfolio-browser-bar">
                           <span className="portfolio-browser-dot" />
                           <span className="portfolio-browser-dot" />
                           <span className="portfolio-browser-dot" />
                           <p>{getHostLabel(item.href)}</p>
                         </div>
-                        <img
-                          src={item.image}
-                          alt={`${item.title} preview`}
-                          className="portfolio-media-image"
-                          loading="lazy"
-                          onError={() => setBrokenPreviews((current) => ({ ...current, [item.title]: true }))}
-                        />
+                        {item.previewMode === 'mobile' ? (
+                          <div className="portfolio-mobile-frame">
+                            <img
+                              src={item.image}
+                              alt={`${item.title} preview`}
+                              className="portfolio-media-image portfolio-media-image-mobile"
+                              loading="lazy"
+                              onError={() => setBrokenPreviews((current) => ({ ...current, [item.title]: true }))}
+                            />
+                          </div>
+                        ) : (
+                          <img
+                            src={item.image}
+                            alt={`${item.title} preview`}
+                            className="portfolio-media-image"
+                            loading="lazy"
+                            onError={() => setBrokenPreviews((current) => ({ ...current, [item.title]: true }))}
+                          />
+                        )}
                       </div>
                     ) : (
                       <div className="portfolio-placeholder portfolio-preview-fallback">

@@ -224,7 +224,7 @@ export const careerJourney = [
 export const brandItems = [
   {
     name: 'Iridium',
-    src: '/brands/iridium.webp',
+    src: '/brands/iridium.svg',
     duration: 'Current',
     statusType: 'current',
     isCurrent: true,
@@ -265,8 +265,8 @@ export const brandItems = [
   },
   {
     name: 'Aikira Tari',
-    src: '/brands/aikira-tari.webp',
-    darkSrc: '/brands/aikira-tari-dark.webp',
+    src: '/brands/aikira-tari.svg',
+    darkSrc: '/brands/aikira-tari-dark.svg',
     duration: 'Freelance',
     statusType: 'freelance',
     role: 'Freelance cultural-performance campaign',
@@ -279,8 +279,8 @@ export const brandItems = [
   },
   {
     name: 'Hennaline',
-    src: '/brands/hennaline.webp',
-    darkSrc: '/brands/hennaline-dark.webp',
+    src: '/brands/hennaline-dark.svg',
+    darkSrc: '/brands/hennaline-dark.svg',
     duration: 'Growth track',
     statusType: 'growth',
     role: 'Foundational social, content, and ops role',
@@ -344,6 +344,7 @@ export const webAppItems = [
     summary: 'Lightweight dashboard system built to track vehicle service progress in one view.',
     href: 'https://iridiumtracker.onrender.com/dashboard',
     image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Firidiumtracker.onrender.com%2Fdashboard?w=1600',
+    previewMode: 'desktop',
     videoSrc: '',
     caseStudy: {
       projectTitle: 'Automotive Customer Car Tracker',
@@ -378,7 +379,8 @@ export const webAppItems = [
     category: 'Website / Brand Marketing',
     summary: 'Dedicated service landing page that replaced a messy Linktree entry point from social media.',
     href: 'https://websiteiridium.onrender.com/',
-    image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwebsiteiridium.onrender.com%2F?w=1600',
+    image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwebsiteiridium.onrender.com%2F?w=420',
+    previewMode: 'mobile',
     videoSrc: '',
     caseStudy: {
       projectTitle: 'Automotive Landing Page Redesign',

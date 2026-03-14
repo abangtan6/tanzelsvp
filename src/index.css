@@ -1089,6 +1089,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 0.12rem;
+    overflow: hidden;
   }
 
   .brand-logo-caption {
@@ -1257,6 +1258,11 @@
 
   .brand-logo-image-hennaline {
     --brand-scale: 1.2;
+    filter: brightness(0.16) saturate(0.7) contrast(1.2);
+  }
+
+  .dark .brand-logo-image-hennaline {
+    filter: none;
   }
 
   .brand-logo-image-ase {
@@ -1271,18 +1277,18 @@
   .brand-logo-slot-current::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: 1px;
     pointer-events: none;
-    background: repeating-linear-gradient(
-      125deg,
-      rgba(255, 120, 35, 0.08) 0 22%,
-      rgba(255, 174, 109, 0.18) 22% 44%,
-      rgba(255, 120, 35, 0.08) 44% 66%,
-      rgba(255, 191, 132, 0.16) 66% 88%
+    background: linear-gradient(
+      112deg,
+      rgba(255, 126, 42, 0.06) 0%,
+      rgba(255, 186, 126, 0.18) 30%,
+      rgba(255, 118, 32, 0.07) 58%,
+      rgba(255, 194, 135, 0.16) 100%
     );
-    background-size: 280px 280px;
-    animation: currentBrandFlow 10s linear infinite;
-    opacity: 0.9;
+    background-size: 200% 200%;
+    animation: currentBrandFlow 6.5s ease-in-out infinite alternate;
+    opacity: 0.88;
   }
 
   .brand-logo-slot-current .brand-logo-caption h3 {
@@ -1290,12 +1296,12 @@
   }
 
   .dark .brand-logo-slot-current::before {
-    background: repeating-linear-gradient(
-      125deg,
-      rgba(255, 117, 36, 0.09) 0 22%,
-      rgba(255, 174, 109, 0.15) 22% 44%,
-      rgba(255, 117, 36, 0.08) 44% 66%,
-      rgba(255, 191, 132, 0.12) 66% 88%
+    background: linear-gradient(
+      112deg,
+      rgba(255, 122, 38, 0.08) 0%,
+      rgba(255, 176, 108, 0.16) 30%,
+      rgba(255, 122, 38, 0.08) 58%,
+      rgba(255, 184, 127, 0.13) 100%
     );
   }
 
@@ -1358,6 +1364,10 @@
     overflow: hidden;
   }
 
+  .portfolio-media-browser-mobile {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent), var(--surface-light);
+  }
+
   .portfolio-browser-bar {
     min-height: 1.55rem;
     border-bottom: 1px solid var(--border-soft);
@@ -1385,6 +1395,24 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .portfolio-mobile-frame {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 0.8rem;
+    background: linear-gradient(180deg, rgba(255, 107, 0, 0.04), transparent);
+  }
+
+  .portfolio-media-image-mobile {
+    width: min(100%, 178px);
+    height: 100%;
+    max-height: 260px;
+    border: 1px solid var(--border-soft);
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 0.12rem;
   }
 
   .portfolio-media-image {
@@ -2428,11 +2456,11 @@
 
 @keyframes currentBrandFlow {
   0% {
-    background-position: 0 50%;
+    background-position: 0% 48%;
   }
 
   100% {
-    background-position: 280px 50%;
+    background-position: 100% 52%;
   }
 }
 
