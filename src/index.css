@@ -1010,11 +1010,12 @@
   }
 
   .brand-logo-slot {
-    min-height: 7rem;
+    min-height: 8.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem 0.9rem;
+    padding: 1rem 1.1rem;
+    overflow: hidden;
   }
 
   .brand-placeholder {
@@ -1033,17 +1034,40 @@
   }
 
   .brand-logo-image {
-    width: auto;
-    max-width: 82%;
-    max-height: 64px;
+    --brand-scale: 1;
+    width: min(100%, 250px);
+    max-width: 250px;
+    height: 70px;
     object-fit: contain;
     opacity: 0.92;
+    transform: scale(var(--brand-scale));
+    transform-origin: center;
     transition: opacity 0.22s ease, transform 0.22s ease;
   }
 
   .brand-logo-slot:hover .brand-logo-image {
     opacity: 1;
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(var(--brand-scale));
+  }
+
+  .brand-logo-image-iridium {
+    --brand-scale: 1.04;
+  }
+
+  .brand-logo-image-wexy {
+    --brand-scale: 1.7;
+  }
+
+  .brand-logo-image-bunkface {
+    --brand-scale: 1.44;
+  }
+
+  .brand-logo-image-aikira-tari {
+    --brand-scale: 1.56;
+  }
+
+  .brand-logo-image-hennaline {
+    --brand-scale: 1.45;
   }
 
   .portfolio-header {
