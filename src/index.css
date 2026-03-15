@@ -134,6 +134,16 @@
     display: block;
   }
 
+  .site-header {
+    transition: opacity 0.26s ease, transform 0.26s ease;
+  }
+
+  .site-header-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
   @screen md {
     .brand-lockup-logo {
       height: 28px;
@@ -1265,7 +1275,8 @@
   }
 
   .brand-duration-show {
-    border-color: rgba(255, 153, 74, 0.28);
+    border-color: var(--border-soft);
+    color: var(--text-secondary);
   }
 
   .brand-insight-box {
@@ -1603,6 +1614,17 @@
     aspect-ratio: 6 / 5;
   }
 
+  .portfolio-media-3d {
+    aspect-ratio: 6 / 5;
+  }
+
+  .portfolio-3d-single {
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+    text-align: inherit;
+  }
+
   .portfolio-media-browser {
     width: 100%;
     height: 100%;
@@ -1754,10 +1776,48 @@
     padding: 0.66rem;
     display: grid;
     gap: 0.32rem;
+    position: relative;
   }
 
   .portfolio-deliverable-tile svg {
     color: var(--accent);
+  }
+
+  .portfolio-deliverable-head {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-deliverable-account-tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    border: 1px solid var(--border-soft);
+    background: color-mix(in srgb, var(--surface-panel) 84%, transparent);
+    padding: 0.16rem 0.34rem;
+    box-shadow: 0 0 0 rgba(255, 107, 0, 0);
+    animation: socialTagPulse 2.1s ease-in-out infinite;
+  }
+
+  .portfolio-deliverable-account-tag:hover {
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border-soft));
+    color: var(--accent);
+  }
+
+  @keyframes socialTagPulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 rgba(255, 107, 0, 0);
+    }
+    50% {
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 28%, transparent);
+    }
   }
 
   .portfolio-deliverable-tile p {
@@ -1772,6 +1832,243 @@
     letter-spacing: 0.11em;
     text-transform: uppercase;
     color: var(--text-muted);
+  }
+
+  .portfolio-deliverable-preview {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.35rem;
+    border: 1px solid var(--border-soft);
+    margin-bottom: 0.2rem;
+  }
+
+  .portfolio-deliverable-interactive {
+    cursor: pointer;
+    transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  }
+
+  .portfolio-deliverable-interactive:hover,
+  .portfolio-deliverable-interactive:focus-visible,
+  .portfolio-deliverable-open {
+    border-color: color-mix(in srgb, var(--accent) 52%, var(--border-soft));
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(10, 10, 10, 0.11);
+    outline: none;
+  }
+
+  .portfolio-deliverable-popout {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 0.6rem);
+    transform: translateY(-50%) scale(0.98);
+    width: clamp(13rem, 22vw, 17.2rem);
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--border-strong);
+    background: var(--surface-panel);
+    padding: 0.36rem;
+    box-shadow: 0 18px 38px rgba(10, 10, 10, 0.24);
+    z-index: 25;
+    pointer-events: none;
+    animation: deliverablePopoutIn 0.22s ease both;
+  }
+
+  .portfolio-deliverable-popout-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid var(--border-soft);
+  }
+
+  .portfolio-deliverable-popout-meta {
+    position: absolute;
+    right: 0.64rem;
+    bottom: 0.64rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--border-soft);
+    padding: 0.18rem 0.34rem;
+  }
+
+  .dark .portfolio-deliverable-popout-meta {
+    background: rgba(14, 14, 14, 0.78);
+  }
+
+  @keyframes deliverablePopoutIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%) scale(1);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .portfolio-deliverable-popout {
+      left: 50%;
+      top: auto;
+      bottom: calc(100% + 0.55rem);
+      transform: translateX(-50%) scale(0.98);
+      width: min(16rem, 78vw);
+    }
+
+    @keyframes deliverablePopoutIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  }
+
+  .work-preview-modal {
+    width: min(980px, 100%);
+    overflow: hidden;
+  }
+
+  .work-preview-stage {
+    position: relative;
+    background: var(--surface-panel);
+    min-height: min(72vh, 620px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem 1rem;
+  }
+
+  .work-preview-image {
+    width: min(100%, 900px);
+    max-height: min(72vh, 620px);
+    object-fit: contain;
+    display: block;
+    border: 1px solid var(--border-soft);
+    background: var(--surface-light);
+  }
+
+  .work-preview-placeholder-grid {
+    width: 100%;
+    display: grid;
+    gap: 0.8rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+  }
+
+  .work-preview-video-placeholder {
+    width: min(100%, 230px);
+    aspect-ratio: 9 / 16;
+    border: 1px solid var(--border-soft);
+    background:
+      linear-gradient(180deg, rgba(255, 107, 0, 0.06), transparent),
+      var(--surface-light);
+    display: grid;
+    place-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 0.85rem;
+  }
+
+  .work-preview-video-placeholder p {
+    margin: 0;
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .work-preview-video-placeholder span {
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .work-preview-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.1rem;
+    height: 2.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fff;
+    background: rgba(10, 10, 10, 0.52);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .work-preview-nav:hover {
+    background: rgba(255, 107, 0, 0.24);
+    border-color: rgba(255, 107, 0, 0.42);
+  }
+
+  .work-preview-nav-prev {
+    left: 0.75rem;
+  }
+
+  .work-preview-nav-next {
+    right: 0.75rem;
+  }
+
+  .work-preview-counter {
+    position: absolute;
+    right: 0.9rem;
+    bottom: 0.9rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #f1f1f1;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(8, 8, 8, 0.58);
+    padding: 0.2rem 0.42rem;
+  }
+
+  .work-preview-copy {
+    border-top: 1px solid var(--border-soft);
+    background: var(--surface-light);
+    padding: 1rem 1.1rem 1.2rem;
+    display: grid;
+    gap: 0.72rem;
+  }
+
+  .work-preview-copy-title {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .work-preview-copy-text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .work-preview-copy-list {
+    margin: 0;
+    padding-left: 1.05rem;
+    display: grid;
+    gap: 0.34rem;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .dark .work-preview-stage {
+    background: #090909;
   }
 
   .portfolio-deliverable-primary {
@@ -1798,6 +2095,43 @@
     text-transform: uppercase;
     color: var(--text-secondary);
     transition: color 0.22s ease, transform 0.22s ease;
+  }
+
+  .portfolio-vault-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+    background: color-mix(in srgb, var(--accent) 86%, #0f0f0f);
+    padding: 0.36rem 0.55rem;
+    height: fit-content;
+    box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+    animation: vaultPulse 2s ease-in-out infinite;
+  }
+
+  .portfolio-vault-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 24%, transparent);
+  }
+
+  .portfolio-copy-vault {
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes vaultPulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+    }
+    50% {
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+    }
   }
 
   .portfolio-flow-link:hover {
@@ -2538,6 +2872,55 @@
 
   .dark .site-footer-socials a:hover {
     color: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    .section-pad {
+      padding-top: 3.15rem;
+      padding-bottom: 3.15rem;
+    }
+
+    .hero-section-pad {
+      padding-top: 4.6rem;
+      padding-bottom: 4.4rem;
+    }
+
+    .portfolio-title {
+      font-size: 2.3rem;
+    }
+
+    .portfolio-note {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      line-height: 1.65;
+    }
+
+    .portfolio-card-title {
+      font-size: 1.2rem;
+    }
+
+    .photo-modal {
+      max-height: 94vh;
+    }
+
+    .photo-modal-content {
+      padding: 1.1rem 1rem;
+    }
+
+    .work-preview-stage {
+      min-height: 52vh;
+      padding: 1.75rem 0.7rem 0.75rem;
+    }
+
+    .work-preview-nav {
+      width: 2.35rem;
+      height: 2.35rem;
+    }
+
+    .portfolio-vault-button {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   @screen lg {

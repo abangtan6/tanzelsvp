@@ -96,7 +96,7 @@ export default function CareerJourneySection({ journey = [] }) {
             <p className="section-eyebrow">Career Logbook</p>
             <h2 className="portfolio-title">Career Journey.</h2>
           </div>
-          <p className="portfolio-note">A timeline of where I&apos;ve been and where I&apos;m heading next.</p>
+          <p className="portfolio-note">A focused timeline of role progression, practical scope, and next-stage direction.</p>
         </div>
 
         <div className="journey-grid-wrap journey-bento-wrap">
@@ -146,7 +146,7 @@ export default function CareerJourneySection({ journey = [] }) {
                   <p className="journey-description">{item.description}</p>
                   <p className="journey-drag-hint">
                     <Sparkles size={11} />
-                    Drag to explore
+                    Progression snapshot
                   </p>
                 </article>
               );

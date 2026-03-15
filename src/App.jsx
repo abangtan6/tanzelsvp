@@ -6,6 +6,7 @@ import HeroSection from './components/sections/HeroSection';
 import BrandsSection from './components/sections/BrandsSection';
 import PhotographySection from './components/sections/PhotographySection';
 import SkillsSection from './components/sections/SkillsSection';
+import ThreeDWorkSection from './components/sections/ThreeDWorkSection';
 import WorkSection from './components/sections/WorkSection';
 import CareerJourneySection from './components/sections/CareerJourneySection';
 import WebAppsSection from './components/sections/WebAppsSection';
@@ -18,6 +19,7 @@ import {
   skillGroups,
   brandItems,
   projectItems,
+  threeDItems,
   webAppItems,
   photoItems,
   socialLinks,
@@ -37,9 +39,10 @@ export default function App() {
         <HeroSection person={personalInfo} />
         <AboutSection person={personalInfo} stats={aboutStats} experienceItems={experienceItems} />
         <BrandsSection brands={brandItems} theme={theme} />
+        <ThreeDWorkSection items={threeDItems} />
+        <WebAppsSection items={webAppItems} />
         <WorkSection projects={projectItems} />
         <SkillsSection groups={skillGroups} />
-        <WebAppsSection items={webAppItems} />
         <PhotographySection photos={photoItems} theme={theme} />
         <CareerJourneySection journey={careerJourney} />
         <ContactSection person={personalInfo} socials={socialLinks} />

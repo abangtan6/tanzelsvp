@@ -33,6 +33,7 @@ export default function WebAppsSection({ items = [] }) {
   const [activeItem, setActiveItem] = useState(null);
   const [brokenPreviews, setBrokenPreviews] = useState({});
   const [brokenCaseVideos, setBrokenCaseVideos] = useState({});
+  const iridiumReferenceLogo = '/brands/iridium.svg';
 
   useEffect(() => {
     if (!activeItem) {
@@ -90,9 +91,15 @@ export default function WebAppsSection({ items = [] }) {
                 <p className="section-eyebrow">Recent Builds</p>
                 <h2 className="portfolio-title">Digital Prescriptions.</h2>
               </div>
-              <p className="portfolio-note">
-                A concise selection of recent web builds, showing how each product was shaped from problem to implementation.
-              </p>
+              <div className="portfolio-note-stack">
+                <div className="photo-context-chip">
+                  <img src={iridiumReferenceLogo} alt="" aria-hidden="true" className="photo-context-logo" />
+                  <span>Iridium reference</span>
+                </div>
+                <p className="portfolio-note">
+                  A concise selection of recent web builds, showing how each product was shaped from problem to implementation.
+                </p>
+              </div>
             </div>
 
             <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-2">

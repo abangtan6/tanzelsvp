@@ -1,17 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import ButtonLink from './ButtonLink';
 
 export default function Navbar({ links, theme, onToggleTheme, person }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
   const brandLogo = theme === 'dark' ? person.logo.dark : person.logo.light;
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      const pastThreshold = currentScrollY > 72;
+
+      if (isMenuOpen) {
+        setIsHeaderHidden(false);
+      } else {
+        setIsHeaderHidden(isScrollingDown && pastThreshold);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isMenuOpen]);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-soft)] bg-[var(--surface-overlay)]">
+    <header className={`site-header sticky top-0 z-50 border-b border-[var(--border-soft)] ${isHeaderHidden ? 'site-header-hidden' : ''}`}>
       <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-6 px-4 py-3 md:px-8">
         <a
           href="#top"

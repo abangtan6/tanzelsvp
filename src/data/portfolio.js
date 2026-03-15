@@ -1,11 +1,11 @@
 export const navLinks = [
-  { label: 'Background', href: '#about' },
   { label: 'Brands', href: '#brands' },
+  { label: '3D Work', href: '#three-d-work' },
   { label: 'Brand Case Files', href: '#work' },
   { label: 'Diagnostics', href: '#diagnostics' },
   { label: 'Web Apps', href: '#web-apps' },
   { label: 'Photography', href: '#photography' },
-  { label: 'Career Journey', href: '#journey' },
+  { label: 'Journey', href: '#journey' },
 ];
 
 export const personalInfo = {
@@ -54,6 +54,8 @@ export const aboutStats = [
   { label: 'Stack', value: 'Tailwind CSS', palette: ['#06B6D4', '#0EA5E9'] },
   { label: 'Stack', value: 'JavaScript ES6+', palette: ['#F7DF1E', '#2B2B2B'] },
   { label: 'Software', value: 'Meta Business Suite', palette: ['#1877F2', '#0A66FF'] },
+  { label: 'Software', value: 'CapCut', palette: ['#6B7280', '#FFFFFF'] },
+  { label: 'Software', value: 'Canva', palette: ['#2563EB', '#7C3AED'] },
   { label: 'Software', value: 'Blender', palette: ['#EA7600', '#0066CC'] },
   { label: 'Software', value: 'Unreal Engine', palette: ['#0E1128', '#FFFFFF'] },
 ];
@@ -105,65 +107,6 @@ export const skillGroups = [
     code: '05_VIDEO',
     displayTitle: 'Video Editor',
     description: 'Shaping footage into brand-aligned edits with smooth pacing, clarity, and platform-ready flow.',
-  },
-];
-
-export const careerJourneyLegacy = [
-  {
-    period: 'Late 2019 — Dec 2022',
-    role: 'Social Media Manager',
-    company: 'Hennaline Organics',
-    description:
-      'Started my design career by managing social media content, visual branding, and marketing creatives.',
-    type: 'past',
-  },
-  {
-    period: '2023',
-    role: 'Freelance 3D Visual Jockey',
-    company: '8–9 months across multiple live shows',
-    description:
-      'Worked on real-time visuals, stage graphics, and creative live event visuals for multiple shows.',
-    type: 'past',
-  },
-  {
-    period: 'Late 2023',
-    role: 'Digital Marketer',
-    company: '3-month sprint',
-    description:
-      'Managed short-term marketing tasks, campaign execution, and digital promotion work.',
-    type: 'past',
-  },
-  {
-    period: 'March 2024 - Present',
-    role: 'Visual Designer',
-    company: 'Iridium',
-    description:
-      'Currently producing multimedia content, design assets, and creative marketing materials.',
-    type: 'present',
-  },
-  {
-    period: 'Forecast',
-    role: 'Creative Manager',
-    company: 'Projected Milestone',
-    description:
-      'Leading multidisciplinary teams while improving strategic alignment across creative delivery.',
-    type: 'future',
-  },
-  {
-    period: 'Forecast',
-    role: 'Art Director',
-    company: 'Projected Milestone',
-    description:
-      'Owning visual direction, campaign storytelling, and quality standards across brand touchpoints.',
-    type: 'future',
-  },
-  {
-    period: 'Forecast',
-    role: 'Creative Director',
-    company: 'Projected Milestone',
-    description:
-      'Defining long-range creative vision and scaling high-impact systems across the organization.',
-    type: 'future',
   },
 ];
 
@@ -230,7 +173,7 @@ export const brandItems = [
     isCurrent: true,
     role: 'In-house creative & visual communications',
     highlights: [
-      'Designed print assets, signage, uniforms, and digital brand materials.',
+      'Helped scale monthly revenue from around RM150K+ to RM260K+ by leading visual direction across social, web, and campaign execution.',
       'Coordinated signboard vendors on specs, structure, and pricing.',
       'Supported social and video direction, including TikTok shoot coaching.',
     ],
@@ -244,7 +187,7 @@ export const brandItems = [
     statusType: 'growth',
     role: 'Foundational social, content, and ops role',
     highlights: [
-      'Ran daily social content and visual scheduling end-to-end.',
+      'Grew the account organically through consistent branding systems and smart KOL roster planning.',
       'Handled Shopee support and routine creative updates.',
       'Planned influencer/KOL collaborations and ad coordination.',
     ],
@@ -312,12 +255,67 @@ export const projectItems = [
     title: 'Iridium Content Architecture',
     category: '',
     summary: 'Placeholder ready. Upload final media to activate this case study visual.',
-    focus: 'Primary Focus: TikTok video editing and short-form content performance.',
+    focus: 'Primary Focus: Social media content strategy, editing, and short-form performance.',
     deliverables: [
-      { type: 'video', label: 'TikTok Videos', primary: true },
-      { type: 'print', label: 'Jersey Designs' },
-      { type: 'print', label: 'Brochures' },
-      { type: 'brand', label: 'Brand Guidelines' },
+      {
+        type: 'print',
+        label: 'Environmental Design',
+        primary: true,
+        caseCopy: {
+          title: 'Iridium Environmental Design System',
+          problem:
+            'Before this redesign, Iridium had no clear or recognizable offline brand presence. The workshop environment looked operational but visually inconsistent, which weakened first impressions and reduced brand recall.',
+          objective:
+            'Establish a clear on-site identity system that improves visibility, consistency, and customer trust from the moment people approach the service center.',
+          approach: [
+            'Audited workshop touchpoints, sightlines, and entry-path visibility to identify where branding was weak or fragmented.',
+            'Defined a controlled environmental palette and visual hierarchy to keep physical assets consistent across zones.',
+            'Designed vertical banner concepts to create stronger roadside and in-compound brand recognition.',
+            'Produced foam board directionals and branded communication surfaces for clearer navigation and messaging.',
+            'Aligned with suppliers on materials, production constraints, and install quality to protect design intent in execution.',
+          ],
+          outcome:
+            'The result is a more cohesive, professional workshop environment that strengthens offline brand recognition and creates a clearer, trust-building customer experience.',
+          videoPlaceholders: [
+            { label: 'Before Service Center', hint: 'Add vertical before video (9:16)' },
+            { label: 'After Service Center', hint: 'Add vertical after video (9:16)' },
+          ],
+        },
+      },
+      {
+        type: 'social',
+        label: 'Social Media Posts',
+        primary: false,
+        previewSrc: '/company-diagnosis/iridium/social-media-posts/1.webp',
+        previewFrames: [
+          '/company-diagnosis/iridium/social-media-posts/1.webp',
+          '/company-diagnosis/iridium/social-media-posts/2.webp',
+          '/company-diagnosis/iridium/social-media-posts/3.webp',
+          '/company-diagnosis/iridium/social-media-posts/4.webp',
+        ],
+        socialTag: {
+          label: 'Iridium TikTok',
+          href: 'https://www.tiktok.com/@iridiumhq',
+        },
+      },
+      {
+        type: 'print',
+        label: 'Brochures',
+        previewSrc: '/company-diagnosis/iridium/brochures/1.webp',
+        previewFrames: [
+          '/company-diagnosis/iridium/brochures/1.webp',
+          '/company-diagnosis/iridium/brochures/2.webp',
+        ],
+      },
+      {
+        type: 'brand',
+        label: 'Brand Guidelines',
+        previewSrc: '/company-diagnosis/iridium/brand-guidelines/2.webp',
+        previewFrames: [
+          '/company-diagnosis/iridium/brand-guidelines/1.webp',
+          '/company-diagnosis/iridium/brand-guidelines/2.webp',
+        ],
+      },
     ],
     href: '#contact',
   },
@@ -327,13 +325,77 @@ export const projectItems = [
     summary: 'Placeholder ready. Upload final media to activate this case study visual.',
     focus: 'Primary Focus: Online brand identity and consistent social presence.',
     deliverables: [
-      { type: 'photo', label: 'Photoshoot Assets', primary: true },
-      { type: 'social', label: 'Social Media Posts' },
-      { type: 'mockup', label: 'Brand Mockups' },
-      { type: 'brand', label: 'Brand Guidelines' },
+      {
+        type: 'social',
+        label: 'Social Media Posts',
+        primary: true,
+        previewSrc: '/company-diagnosis/hennaline/social-media-posts/5.webp',
+        previewFrames: [
+          '/company-diagnosis/hennaline/social-media-posts/1.webp',
+          '/company-diagnosis/hennaline/social-media-posts/2.webp',
+          '/company-diagnosis/hennaline/social-media-posts/3.webp',
+          '/company-diagnosis/hennaline/social-media-posts/4.webp',
+          '/company-diagnosis/hennaline/social-media-posts/5.webp',
+          '/company-diagnosis/hennaline/social-media-posts/6.webp',
+          '/company-diagnosis/hennaline/social-media-posts/7.webp',
+        ],
+        socialTag: {
+          label: 'Hennaline Instagram',
+          href: 'https://www.instagram.com/hennaline_hq/',
+        },
+      },
+      {
+        type: 'photo',
+        label: 'Photoshoot Assets',
+        primary: false,
+        previewSrc: '/company-diagnosis/hennaline/photoshoot-assets/1.webp',
+        previewFrames: [
+          '/company-diagnosis/hennaline/photoshoot-assets/1.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/2.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/3.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/4.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/5.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/6.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/7.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/8.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/9.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/10.webp',
+          '/company-diagnosis/hennaline/photoshoot-assets/11.webp',
+        ],
+      },
+      {
+        type: 'mockup',
+        label: 'Brand Mockups',
+        previewSrc: '/company-diagnosis/hennaline/brand-mockups/3.webp',
+        previewFrames: [
+          '/company-diagnosis/hennaline/brand-mockups/1.webp',
+          '/company-diagnosis/hennaline/brand-mockups/2.webp',
+          '/company-diagnosis/hennaline/brand-mockups/3.webp',
+          '/company-diagnosis/hennaline/brand-mockups/4.webp',
+          '/company-diagnosis/hennaline/brand-mockups/5.webp',
+        ],
+      },
+      {
+        type: 'brand',
+        label: 'Brand Guidelines',
+        previewSrc: '/company-diagnosis/hennaline/brand-guidelines/1.webp',
+        previewFrames: ['/company-diagnosis/hennaline/brand-guidelines/1.webp'],
+      },
     ],
     href: '#contact',
   },
+];
+
+export const threeDItems = [
+  { type: 'video', src: '/three-d-work/videos/1.mp4' },
+  { type: 'video', src: '/three-d-work/videos/2.mp4' },
+  { type: 'video', src: '/three-d-work/videos/3.mp4' },
+  { type: 'video', src: '/three-d-work/videos/4.mp4' },
+  { type: 'video', src: '/three-d-work/videos/5.mp4' },
+  { type: 'video', src: '/three-d-work/videos/6.mp4' },
+  { type: 'video', src: '/three-d-work/videos/7.mp4' },
+  { type: 'image', src: '/three-d-work/images/1.png' },
+  { type: 'image', src: '/three-d-work/images/2.png' },
 ];
 
 export const webAppItems = [

@@ -19,6 +19,10 @@ export default function HeroSection({ person }) {
                 {person.heroAccent}
               </span>
             </p>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-[var(--text-secondary)]">{person.summary}</p>
+            <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--text-muted)]">
+              {person.title} • {person.location}
+            </p>
           </div>
 
           <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
