@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <meta
       name="description"
       content="Tanzel Ur Rehman portfolio. Brand, social, and multimedia work presented through the Visual Pharmacy identity."
     />
+    <script>
+      if (window.location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1)$/i.test(window.location.hostname)) {
+        window.location.replace(`https://${window.location.host}${window.location.pathname}${window.location.search}${window.location.hash}`);
+      }
+    </script>
     <title>Tanzel Ur Rehman | Visual Pharmacy</title>
   </head>
   <body>
