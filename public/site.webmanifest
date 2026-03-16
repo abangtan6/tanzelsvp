@@ -1,0 +1,15 @@
+{
+  "name": "Tanzel Ur Rehman | Visual Pharmacy",
+  "short_name": "Visual Pharmacy",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0c",
+  "theme_color": "#0c0c0c",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
